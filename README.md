@@ -1,27 +1,29 @@
-# Claude — motor do segundo cérebro
+# Claude — o centro do segundo cérebro
 
-Este repositório guarda **as regras e o protocolo** do segundo cérebro, que é processado por três IAs em etapas:
+Este repositório guarda **as regras e o protocolo** de um segundo cérebro processado por várias IAs:
 
-| Etapa | Quem | Papel | Tipo de dado |
-|---|---|---|---|
-| 1 | **Claude** (Claude Code) | Recebe o material cru, separa, categoriza, cataloga e propõe conexões | "Grosso": tudo o que chega na Entrada |
-| 2 | **Codex** (ChatGPT) | Refina, confere e cuida do que é mais delicado | "Fino": o que já foi triado |
-| 3 | **Gemini Spark** + **Gemini Notebook** | Transforma em tarefas, agenda e estudo; integra tudo | O que já foi aprovado |
-| Reserva | **Antigravity** | Assume quando alguém fica sem cota; leituras longas; scripts | Conforme a etapa que assumir |
-| Bancada | **VS Code** + **GitHub Desktop** | Você vê, revisa e aprova o que as IAs mudaram | — |
+```
+Voz ──► ChatGPT/Codex ──► Spark (força bruta) ──► CLAUDE (refina e conecta) ──► aprovação por voz ──► Obsidian
+                                                         │
+                                                         └──► Spark + Gemini Notebook executam (tarefas, agenda, estudo, pesquisa)
+```
 
-Quem faz o quê, em que horário e como respeitar a janela de 5 horas e o teto semanal de cada uma:
-[`docs/orquestracao.md`](docs/orquestracao.md).
+| Quem | Papel |
+|---|---|
+| **ChatGPT / Codex** | Porta de entrada por voz; lê rascunhos para aprovação; grava no Obsidian |
+| **Gemini Spark** | Força bruta antes (pré-processa) e depois (tarefas, agenda, briefing, pesquisa) |
+| **Claude** | **Centro**: refina tudo e faz as conexões principais |
+| **Gemini Notebook** | Estudo (Faculdade, OAB) |
+| **Antigravity** | Reserva, leitura gigante, scripts |
+| **VS Code + GitHub Desktop** | Bancada e portão de aprovação das regras |
 
 > **Este repositório é público.** Nenhum dado pessoal, pensamento, conversa ou nome de pessoa entra aqui.
-> Os dados circulam só pelo Google Drive (pasta `Segundo Cérebro`). Aqui ficam apenas regras, modelos e scripts.
+> Os dados circulam só pelo Google Drive (`Meu Drive/Segundo Cérebro`).
 
 ## Arquivos
 
-- [`docs/fluxo.md`](docs/fluxo.md) — como os dados passam de uma IA para outra, pastas do Drive, permissões e instruções para o Spark.
-- [`docs/orquestracao.md`](docs/orquestracao.md) — roteamento, rotina diária e semanal, cotas, contingência e fases de implantação.
-- [`CLAUDE.md`](CLAUDE.md) — regras que o Claude segue ao processar.
-- [`AGENTS.md`](AGENTS.md) — regras que o Codex segue ao trabalhar neste projeto.
-- [`GEMINI.md`](GEMINI.md) — regras do Antigravity / Gemini como reserva.
-- [`templates/nota-processada.md`](templates/nota-processada.md) — formato de cada nota que sai da etapa 1.
-- [`templates/painel-de-cotas.md`](templates/painel-de-cotas.md) — planilha onde cada IA registra quanto gastou.
+- [`docs/decisoes.md`](docs/decisoes.md) — o que o dono decidiu (vale sobre todo o resto).
+- [`docs/fluxo.md`](docs/fluxo.md) — pastas, pacote de voz, pedidos, natureza, conexões, aprovação.
+- [`docs/orquestracao.md`](docs/orquestracao.md) — rotina diária e semanal, cotas, contingência, implantação.
+- [`CLAUDE.md`](CLAUDE.md) · [`AGENTS.md`](AGENTS.md) · [`GEMINI.md`](GEMINI.md) — instruções de cada IA.
+- [`templates/`](templates/) — pacote de voz, nota refinada, relatório de rodada.

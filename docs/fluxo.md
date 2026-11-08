@@ -1,84 +1,100 @@
 # Fluxo do segundo cérebro
 
+Decisões que definem este fluxo: [`decisoes.md`](decisoes.md).
+
 ## Visão geral
 
 ```
- Você (voz, texto, foto, áudio)
-        │
-        ▼
- Drive: Segundo Cérebro/00 Entrada ............ material cru, sem organizar
-        │
-        ▼  ETAPA 1 — Claude
- Drive: Segundo Cérebro/10 Triado (Claude) .... notas catalogadas + índice + pendências
-        │
-        ▼  ETAPA 2 — Codex
- Drive: Segundo Cérebro/20 Refinado (Codex) ... notas conferidas e aprovadas por você
-        │                                         └─► Obsidian (cofre), só com sua aprovação
-        ▼  ETAPA 3 — Gemini Spark + Gemini Notebook
- Drive: Segundo Cérebro/30 Ação (Spark) ....... tarefas, agenda, resumos de estudo
+ VOCÊ fala por voz
+   │
+   ▼  CAPTURA — ChatGPT / Codex
+ 00 Entrada ................. pacote de voz: transcrição + resumo (+ PDFs, prints, anotações)
+   │
+   ▼  FORÇA BRUTA (antes) — Gemini Spark
+ 05 Pré-processado (Spark) .. volume pesado já separado por assunto, sem interpretar
+   │
+   ▼  CENTRO — Claude  (refina, marca natureza e autoria, faz as conexões principais)
+ 10 Refinado (Claude) ....... todas as notas refinadas + Índice + Sugestões de conexão
+   ├──► 20 Aprovado ........... estudo e tarefas passam direto
+   └──► 15 Para aprovar ....... pensamentos pessoais esperam você
+           │
+           ▼  APROVAÇÃO — você, por voz no ChatGPT
+         20 Aprovado .......... Codex move o que você aprovou e grava no Obsidian
+   │
+   ▼  FORÇA BRUTA (depois) — Gemini Spark + Gemini Notebook
+ 30 Ação (Spark) ............ tarefas, agenda, briefing diário, pesquisas de apoio
+                              └─► pesquisa volta para 00 Entrada → Claude refina
 
- Drive: Segundo Cérebro/90 Pedidos ............ fila de ordens para qualquer etapa
+ 90 Pedidos e cotas ......... pedidos entre as IAs + relatórios de cada rodada
+ 99 Arquivo cru ............. originais já processados (nada é apagado)
 ```
 
-O **Google Drive é o barramento comum**: é o único lugar que as três IAs conseguem ler e escrever.
-Spark e Gemini Notebook leem o Drive nativamente; o ChatGPT/Codex lê pelo conector do Drive;
-o Claude lê e cria arquivos pelo conector do Drive.
-
-## Pastas
+## Pastas no Google Drive (`Meu Drive/Segundo Cérebro`)
 
 | Pasta | Quem escreve | Quem lê | Conteúdo |
 |---|---|---|---|
-| `00 Entrada` | Você, Spark (por e-mail), qualquer IA | Claude | Qualquer coisa crua: transcrições de voz, anotações, prints, PDFs |
-| `10 Triado (Claude)` | Claude | Codex, você | Uma nota por ideia, no formato do modelo; `Índice.md`; `Pendências.md` |
-| `20 Refinado (Codex)` | Codex | Spark, Gemini Notebook, você | Notas conferidas e aprovadas |
-| `30 Ação (Spark)` | Spark | Você | Tarefas, compromissos, resumos |
-| `90 Pedidos` | Você, Codex, Spark | Claude | `Pedidos para o Claude` — uma linha por ordem |
-| `99 Arquivo cru` | Claude | — | Originais já processados (nunca apagados) |
+| `00 Entrada` | Codex (voz), você, Spark (pesquisas) | Spark, Claude | Material cru |
+| `05 Pré-processado (Spark)` | Spark | Claude | Volume pesado separado por assunto; transcrições longas quebradas em partes |
+| `10 Refinado (Claude)` | Claude | Codex, você | Notas refinadas, `Índice`, `Sugestões de conexão` |
+| `15 Para aprovar` | Claude | ChatGPT (lê por voz), Codex | Notas de pensamento pessoal aguardando você |
+| `20 Aprovado` | Claude (estudo/tarefas), Codex (após aprovação) | Spark, Gemini Notebook, Codex | Tudo o que está liberado |
+| `30 Ação (Spark)` | Spark | Você, Claude | Briefings, tarefas, resultados de pesquisa |
+| `90 Pedidos e cotas` | Todos | Todos | `Pedidos abertos/`, `Pedidos atendidos/`, `Relatórios de rodada/` |
+| `99 Arquivo cru` | Claude, Spark | — | Originais já processados |
 
-## Como dar ordens ao Claude a partir de outra IA
+**Por que mover em vez de editar:** o conector do Drive que o Claude usa cria e move arquivos, mas não edita o conteúdo
+de arquivos existentes. Por isso, no sistema todo, **o estado de um arquivo é a pasta em que ele está**:
+aprovar = mover de `15` para `20`; pedido atendido = mover de `Pedidos abertos` para `Pedidos atendidos`.
+Índice e Sugestões são recriados a cada rodada com a data no nome; a versão anterior vai para `99 Arquivo cru`.
 
-Qualquer etapa pode escrever no documento `90 Pedidos/Pedidos para o Claude`, uma ordem por linha:
+## Pacote de voz (o que o Codex salva em `00 Entrada`)
+
+Um arquivo por conversa, nome `Voz AAAA-MM-DD HHhMM — <assunto>`. Modelo: [`templates/pacote-de-voz.md`](../templates/pacote-de-voz.md).
+Duas partes separadas: **transcrição** (o mais completa possível) e **resumo do ChatGPT**, marcando em cada ponto
+se foi **dito por você** ou **sugerido pelo ChatGPT**.
+
+## Pedidos entre as IAs
+
+Cada pedido é **um arquivo** em `90 Pedidos e cotas/Pedidos abertos`, com o nome:
 
 ```
-- [ ] 2026-11-08 | de: Codex | processar a Entrada e separar o que é Civil III
-- [ ] 2026-11-08 | de: Spark | criar nota de estudo sobre responsabilidade civil
+Pedido AAAA-MM-DD — de <quem> para <quem> — <prioridade> — <custo P/M/G> — <assunto>
 ```
 
-O Claude lê essa fila quando roda (manualmente ou por tarefa agendada), executa e marca `- [x]` com o resultado.
+O conteúdo explica o pedido. Quem atende move o arquivo para `Pedidos atendidos` e cita o resultado no relatório da rodada.
 
-## Permissões que o Claude precisa
+## Natureza de cada nota
 
-| Permissão | Para quê | Situação |
-|---|---|---|
-| Google Drive (conector) | Ler a Entrada, criar notas e índices | **Ativo.** Pode ler e criar arquivos novos; não edita os arquivos existentes |
-| GitHub `JulioFig92/Claude` | Guardar regras e scripts | **Ativo** (repositório público: só regras, nunca dados) |
-| Gmail (conector) | Ler material enviado por e-mail; mandar pedidos para o Spark | Disponível; usar só com sua autorização |
-| Google Agenda (conector) | Ver compromissos ligados às notas | Disponível; leitura |
-| Tarefa agendada | Processar a Entrada sozinho, por exemplo 2× por dia | Só com sua autorização |
-| Cofre do Obsidian (iCloud, no Mac) | Escrever direto no cofre | **Sem acesso.** Caminho: o Codex aplica no cofre o que você aprovar, ou o cofre passa a sincronizar uma cópia com o Drive |
+Toda nota refinada recebe **uma** natureza: `imaginação` · `hipótese` · `plano` · `decisão` · `fato`.
+Notas de naturezas diferentes podem ficar no mesmo assunto e se conectar, mas a natureza nunca é trocada
+sem você dizer. Sem indicação clara na fala, o Claude escolhe a mais conservadora e anota a dúvida.
 
-## Instruções para colar no Gemini Spark
+## Conexões
 
-> Você é a etapa 3 do meu segundo cérebro. Trabalhe só com a pasta do Google Drive
-> "Segundo Cérebro/20 Refinado (Codex)".
-> 1. Toda nota com tarefas (`- [ ]`) ou datas vira tarefa ou evento na minha Agenda, com link para a nota.
-> 2. Escreva um resumo semanal em "Segundo Cérebro/30 Ação (Spark)".
-> 3. Quando precisar que algo seja reprocessado, escreva uma linha em
->    "Segundo Cérebro/90 Pedidos/Pedidos para o Claude", no formato
->    `- [ ] AAAA-MM-DD | de: Spark | pedido`.
-> 4. Não altere arquivos das pastas 00, 10 e 20.
-> 5. Respeite a autoria: o que foi dito ou pensado por outra pessoa nunca é atribuído a mim.
+- **Fortes** (relação clara e justificada) → entram na nota como `[[link]]`, com o motivo e o tipo:
+  `aplica` · `contradiz` · `evolui de` · `exemplo de` · `depende de` · `relacionado`.
+- **Possíveis** → vão para `10 Refinado (Claude)/Sugestões de conexão AAAA-MM-DD`, para você aprovar por voz.
+- Igualdade de palavras não basta.
 
-## Gemini Notebook (antigo NotebookLM)
+## O que precisa de aprovação
 
-Crie um notebook por área (por exemplo, "Civil III") e adicione como fonte os documentos da pasta
-`20 Refinado (Codex)`. Fontes do Drive se mantêm sincronizadas. Prefira **Google Docs** como formato
-das notas refinadas, porque é o formato que o Notebook aceita melhor.
+| Tipo | Caminho |
+|---|---|
+| Estudo (Faculdade, OAB) e tarefas | **Direto** para `20 Aprovado` |
+| Pensamentos, ideias pessoais, imaginação | `15 Para aprovar` → você aprova por voz → `20 Aprovado` |
+| Sugestões de conexão | Lista à parte → você aprova por voz → o Codex aplica no cofre |
+| Qualquer coisa com autoria incerta | `15 Para aprovar`, sempre |
+
+## Escopo do piloto (1 semana)
+
+Somente **Faculdade** e **Ideias**. Material de Vida pessoal ou Finanças/empresa que chegar à Entrada
+**não é processado**: o Claude o deixa na Entrada e cita no relatório.
 
 ## Regras que valem para todas as etapas
 
-1. **Autoria**: pensamentos e falas de outra pessoa nunca são atribuídos a você. Autoria incerta fica marcada como incerta.
-2. **Aprovação**: nada derivado dos seus pensamentos entra no cofre do Obsidian sem você aprovar o texto.
+1. **Autoria**: pensamentos e falas de outra pessoa nunca são atribuídos a você; sugestão do ChatGPT não é pensamento seu. Autoria incerta fica marcada como incerta.
+2. **Aprovação**: nada de pensamento pessoal entra no cofre sem você aprovar.
 3. **Nada é apagado**: originais vão para `99 Arquivo cru`.
-4. **Sem invenção**: síntese não é transcrição; datas e fatos que não estão na fonte não são criados.
-5. **Dados fora do Git**: nada pessoal entra neste repositório.
+4. **Sem invenção**: síntese não é transcrição; datas e fatos ausentes da fonte não são criados.
+5. **Legislação**: conferir em fonte oficial (planalto.gov.br) antes de citar artigo.
+6. **Dados fora do Git**: este repositório é público; nada pessoal entra aqui.

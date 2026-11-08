@@ -1,21 +1,39 @@
-# Regras para o Antigravity / Gemini — reserva geral do segundo cérebro
+# Regras para o Google — Gemini Spark, Gemini Notebook e Antigravity
 
-Leia `docs/fluxo.md` e `docs/orquestracao.md`. Responda em português do Brasil.
-Se o Antigravity não carregar este arquivo sozinho, cole-o nas regras do workspace.
+Leia `docs/decisoes.md`, `docs/fluxo.md` e `docs/orquestracao.md`. Responda em português do Brasil.
+Se a ferramenta não carregar este arquivo sozinha, cole o trecho correspondente nas instruções dela.
 
-## Papel
+## Gemini Spark — força bruta antes e depois do Claude
 
-1. **Reserva**: quando o Painel de cotas mostrar Claude ou Codex em vermelho, assuma o trabalho deles seguindo
-   `CLAUDE.md` (triagem) ou `AGENTS.md` (revisão). Nunca revise algo que você mesmo escreveu.
-2. **Leitura longa**: ler o cofre inteiro ou arquivos grandes; produzir índices, listas de duplicatas e sugestões de conexão.
-3. **Scripts**: escrever e consertar scripts deste repositório, numa branch `antigravity/…`.
+**Antes (06:00 e 16:00, Brasília):** pegue o que for novo em `Segundo Cérebro/00 Entrada` e grave em
+`05 Pré-processado (Spark)`:
+- transcreva áudios;
+- quebre textos longos em partes por assunto, **sem resumir demais e sem interpretar**;
+- extraia o texto de PDFs e imagens;
+- mantenha as marcas `[dito pelo dono]` / `[sugerido pelo ChatGPT]` e o nome do arquivo de origem.
+Não mova nem apague os originais: o Claude faz isso.
 
-## Ao rodar
+**Depois:**
+- **Tarefas e agenda** (13:30 e 21:00): para cada `- [ ]` com data em `20 Aprovado`, crie tarefa ou evento com link para a nota.
+- **Briefing** (08:30, por e-mail): agenda do dia, tarefas, quantas notas há em `15 Para aprovar`, último relatório do Claude.
+- **Pesquisa de apoio**: atenda os pedidos `para Spark` em `90 Pedidos e cotas/Pedidos abertos`; grave o resultado em
+  `00 Entrada` como `Pesquisa AAAA-MM-DD — <assunto>` (com links das fontes) e mova o pedido para `Pedidos atendidos`.
+- **Resumo do dia** (23:00) em `30 Ação (Spark)`.
+- Depois de cada etapa, escreva um relatório em `90 Pedidos e cotas/Relatórios de rodada`.
 
-- Leia antes as últimas linhas do Painel de cotas e os pedidos com `para: Antigravity`.
-- Ao terminar, escreva sua linha no Painel e uma passagem curta (formato em `docs/orquestracao.md`, seção 6).
+## Gemini Notebook — estudo
+
+Notebook **"Faculdade"** com fontes da pasta `20 Aprovado` (área Faculdade). Gere resumos, áudios e quizzes.
+Não é fonte de verdade: o que o Notebook concluir e for útil volta como material novo para `00 Entrada`.
+
+## Antigravity — reserva
+
+1. Quando o Claude ou o Codex ficar sem cota, assuma o papel deles seguindo `CLAUDE.md` ou `AGENTS.md`. Ao substituir o
+   Claude, **tudo** vai para `15 Para aprovar`, e a próxima rodada do Claude revisa.
+2. Leitura gigante (cofre inteiro, PDFs enormes), sobretudo aos sábados: lista de duplicatas e conexões possíveis → pedido para o Claude.
+3. Scripts deste repositório, numa branch `antigravity/…`.
 
 ## Regras
 
-As mesmas de `CLAUDE.md` → "Regras invioláveis". Não escreva no cofre do Obsidian: sugestões vão para `10 Triado`.
-Este repositório é público: nada pessoal entra aqui.
+As mesmas de `CLAUDE.md` → "Regras invioláveis". O Google executa e pré-processa; **não refina nem decide conexões** —
+isso é do Claude. Este repositório é público: nada pessoal entra aqui.

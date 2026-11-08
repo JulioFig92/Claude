@@ -1,194 +1,150 @@
 # Orquestração — todas as ferramentas, respeitando as cotas
 
-Este documento diz **quem faz o quê, quando e com qual reserva**, para que nenhuma ferramenta fique parada
-enquanto outra estoura o limite. Complementa [`fluxo.md`](fluxo.md) (pastas e regras de dados).
+Quem faz o quê, quando, e o que acontece quando alguém fica sem cota.
+Complementa [`fluxo.md`](fluxo.md) (pastas e regras) e [`decisoes.md`](decisoes.md) (o que o dono decidiu).
+Horários em **Brasília (UTC−3)**.
 
 ---
 
 ## 1. O elenco
 
-| Ferramenta | Onde roda | O que alcança | Papel principal | Cota |
-|---|---|---|---|---|
-| **Claude Code** (nuvem, pelo app) | Servidores da Anthropic | Drive, Gmail, Agenda, GitHub | **Etapa 1 — triagem do cru** (o "grosso") | Janela de 5 h + teto semanal |
-| **Claude Code** (no Mac, terminal ou VS Code) | Seu Mac | Arquivos locais, inclusive o cofre | Reserva da etapa 1 quando o trabalho precisa de arquivos locais | Mesma cota do Claude acima (é a mesma conta) |
-| **Codex** (ChatGPT) | App do Codex / VS Code | Seu Mac, Drive pelo conector | **Etapa 2 — refino, conferência e aplicação no cofre** (o "fino") | Janela de 5 h + teto semanal; créditos extras pagos |
-| **Antigravity** (Google) | Seu Mac | Arquivos locais, navegador | **Reserva geral + leitura longa + scripts.** Modelos Gemini (e, conforme o plano, modelos Claude) com cota separada | Janela de 5 h + teto semanal no AI Pro; Ultra sem teto semanal |
-| **Gemini Spark** | Nuvem do Google, 24 h | Gmail, Drive, Docs, Agenda | **Etapa 3 — tarefas, agenda, resumos**, trabalha enquanto você dorme | Plano Google AI |
-| **Gemini Notebook** (ex-NotebookLM) | Nuvem do Google | Pastas do Drive como fonte | **Estudo** — Civil III, OAB: resumos, áudios, quizzes | Plano Google AI |
-| **VS Code** | Seu Mac | Repositório + cofre | **Bancada**: você vê as mudanças lado a lado, com as extensões do Claude Code e do Codex | Sem cota |
-| **GitHub Desktop** | Seu Mac | Este repositório | **Portão de aprovação**: puxa o que as IAs fizeram, você revisa e junta | Sem cota |
-
-Cada ferramenta tem **seu próprio estoque de cota**. A ideia central é: **nunca gastar a cota cara num trabalho que a cota barata faz.**
-
----
-
-## 2. Roteamento — qual ferramenta para cada tipo de tarefa
-
-| Tarefa | Principal | 1ª reserva | 2ª reserva | Por quê |
-|---|---|---|---|---|
-| Separar e catalogar material cru | Claude (nuvem) | Antigravity (Gemini) | Codex | Volume alto, precisa de cuidado com autoria |
-| Ler muito material de uma vez (cofre inteiro, PDF grande) | Antigravity (Gemini) | Gemini Notebook | Claude | Gemini aguenta contexto muito longo |
-| Propor conexões entre notas | Claude | Codex | Antigravity | Exige julgamento de contexto |
-| Conferir autoria e fidelidade (revisão) | Codex | Claude | — | Revisor deve ser **diferente** de quem escreveu |
-| Aplicar no Obsidian (após sua aprovação) | Codex | Claude Code no Mac | Antigravity | Precisa de acesso ao Mac |
-| Escrever/consertar scripts do projeto | Antigravity | Codex | Claude | Poupa as cotas de texto |
-| Virar tarefa e compromisso | Spark | Claude (com conector da Agenda) | — | Spark está sempre ligado |
-| Estudo, resumo em áudio, quiz | Gemini Notebook | Claude | — | É para isso que ele existe |
-| Pesquisa de legislação (planalto.gov.br) | Claude | Spark | Codex | Conferir sempre em fonte oficial |
-| Aprovação final | **Você** (GitHub Desktop / Drive) | — | — | Nada sobe sem você |
-
-**Regra de ouro da revisão:** quem escreveu não revisa. Se o Claude triou, o Codex confere; se o Codex estiver sem cota,
-o Antigravity confere; só em último caso o próprio Claude revisa, e aí a nota continua `status: rascunho`.
-
----
-
-## 3. Rotina diária — janelas de 5 horas escalonadas
-
-A janela de 5 horas começa **na primeira mensagem**. Por isso, começar todas as ferramentas ao mesmo tempo desperdiça cota:
-elas esgotam juntas e renovam juntas. O plano abaixo **escalona** as janelas para sempre haver uma ferramenta com cota cheia.
-Os horários são exemplos — ajuste ao seu dia, mantendo o espaçamento.
-
-```
-        06h    08h    10h    12h    14h    16h    18h    20h    22h    00h
-Spark   ████████████████████████████████████████████████████████████████████  (contínuo)
-Claude         [===== Janela A =====]              [===== Janela B =====]
-Codex                       [===== Janela A =====]              [== B ==]
-Antigrav.            ( reserva — entra quando alguém fica vermelho )
-Você     ☕ briefing        ✔ aprova            ✔ aprova            🔀 GitHub Desktop
-```
-
-| Horário | Quem | O que faz | Duração alvo |
+| Ferramenta | Papel | Onde roda | Cota |
 |---|---|---|---|
-| **06:30** | Spark | Briefing do dia em `30 Ação (Spark)`: agenda, tarefas vencendo, o que chegou na Entrada | automático |
-| **08:00** | Claude — Janela A | Lê `90 Pedidos` + **só os arquivos novos** da Entrada; tria em lote; atualiza Índice e Pendências; registra no Painel | até ~60% da janela |
-| **11:00** | Codex — Janela A | Revisa as notas triadas pela manhã; prepara as que precisam da sua aprovação | até ~60% da janela |
-| **12:30** | **Você** (10 min) | Aprova ou corrige as notas em `10 Triado` (ou responde ao Codex) | — |
-| **13:00** | Codex | Grava as aprovadas em `20 Refinado` e aplica no cofre | resto da janela A |
-| **13:30** | Spark | Lê `20 Refinado`; cria tarefas e eventos | automático |
-| **18:00** | Claude — Janela B | Pedidos da tarde + conexões entre as notas novas e as antigas + pesquisa de legislação pendente | até ~60% da janela |
-| **21:00** | Codex — Janela B | Revisão curta do que o Claude fez à tarde | curta |
-| **22:00** | **Você** (5 min) | GitHub Desktop: puxa, revisa e junta as mudanças de regras/scripts | — |
-| **23:00** | Spark | Resumo do dia em `30 Ação (Spark)` | automático |
-| **qualquer hora** | Antigravity | Entra quando o Painel mostra alguém **vermelho**, ou para scripts e leituras longas | conforme cota |
+| **ChatGPT / Codex** | **Captura por voz** · lê rascunhos em voz alta para aprovação · grava no Obsidian | App no Mac e no celular | Janela de 5 h + teto semanal; créditos extras pagos |
+| **Gemini Spark** | **Força bruta antes** (pré-processa a Entrada) e **depois** (tarefas, agenda, briefing, pesquisa) | Nuvem do Google, 24 h | Plano Google AI |
+| **Claude** (nuvem, agendado) | **Centro: refina tudo e faz as conexões principais** | Nuvem da Anthropic | Janela de 5 h + teto semanal (mesma conta das suas conversas com o Claude) |
+| **Claude Code** (no Mac / VS Code) | Mesmo papel, quando precisar de arquivos do Mac | Seu Mac | Mesma cota acima |
+| **Gemini Notebook** | **Estudo**: resumos, áudios e quizzes de Faculdade/OAB a partir de `20 Aprovado` | Nuvem do Google | Plano Google AI |
+| **Antigravity** | **Reserva** (assume refino ou gravação se alguém ficar vermelho) · leitura gigante · scripts | Seu Mac | Janela de 5 h + teto semanal no AI Pro; Ultra sem teto semanal |
+| **VS Code** | Bancada: ver lado a lado o que as IAs mudaram no repositório e no cofre | Seu Mac | — |
+| **GitHub Desktop** | Portão de aprovação das **regras e scripts** (branches `claude/`, `codex/`, `antigravity/`) | Seu Mac | — |
 
-**Por que só ~60% da janela:** os 40% restantes ficam de reserva para pedidos urgentes, correções e para você conversar sem bater no limite.
+**Princípio:** o Claude é o centro, então **a cota do Claude é a mais preciosa**. Tudo o que for volume, leitura longa,
+transcrição ou execução vai para o Google, que tem cota mais folgada e trabalha 24 h. O Claude recebe o material já
+pré-processado e gasta a cota só com o que só ele faz: refinar, separar natureza e autoria, conectar.
 
 ---
 
-## 4. Rotina semanal — respeitando o teto semanal
+## 2. Roteamento por tipo de tarefa
 
-O teto semanal é o que mais pega de surpresa. Divida a semana assim:
+| Tarefa | Principal | Reserva | Observação |
+|---|---|---|---|
+| Conversar por voz, capturar ideias | ChatGPT/Codex | Gravar áudio no celular e salvar em `00 Entrada` (o Spark transcreve) | Única razão de o ChatGPT estar no fluxo |
+| Transcrever áudio, quebrar textos longos, ler PDFs | Spark | Antigravity | Nunca o Claude |
+| **Refinar, marcar natureza e autoria** | **Claude** | Antigravity (tudo sai como `aguarda aprovação`) | Coração do sistema |
+| **Conexões principais** | **Claude** | Esperar a próxima rodada do Claude | Não terceirizar |
+| Ler rascunhos em voz alta e colher aprovação | ChatGPT | Você lê no Drive | — |
+| Gravar no Obsidian | Codex | Antigravity; Claude Code no Mac | Só o que está em `20 Aprovado` |
+| Tarefas e agenda | Spark | Claude cria lista em `30 Ação` | — |
+| Briefing diário | Spark | Relatório da rodada da manhã do Claude | — |
+| Pesquisa de apoio na web | Spark | Claude | Resultado volta para `00 Entrada` |
+| Estudo (resumos, áudios, quizzes) | Gemini Notebook | Claude | Fonte: `20 Aprovado` |
+| Scripts deste repositório | Antigravity | Codex | Branch própria |
 
-| Dia | Foco | Ferramentas pesadas |
+**Quem escreveu não revisa:** se o Antigravity refinar no lugar do Claude, a próxima rodada do Claude revisa.
+
+---
+
+## 3. Rotina diária
+
+```
+          06h     08h     10h     12h     14h     16h     18h     20h     22h
+Você      ── fala por voz com o ChatGPT quando quiser, o dia todo ──────────────
+Spark     ▲pré          ▲briefing     ▲executa    ▲pré           ▲executa  ▲resumo
+Claude          ▲RODADA MANHÃ                            ▲RODADA TARDE
+ChatGPT                             ▲aprovação por voz                 ▲aprovação
+Codex                               ▲grava no cofre                    ▲grava no cofre
+```
+
+| Hora | Quem | O que faz |
 |---|---|---|
-| Seg–Qui | Fluxo normal (seção 3) | Claude + Codex |
-| Sex | Fluxo leve; Claude faz o **relatório da semana** (o que entrou, o que ficou pendente) | Claude |
-| Sáb | **Dia do Google**: Gemini Notebook gera resumos e quizzes de estudo; Antigravity faz a leitura longa do cofre e procura notas duplicadas | Gemini Notebook + Antigravity |
-| Dom | Spark monta o **plano da semana**; você revisa o Painel de cotas | Spark |
+| a qualquer hora | **Você + ChatGPT** | Conversa por voz. No fim, o Codex salva o pacote de voz em `00 Entrada` |
+| **06:00** | Spark | Pré-processa tudo o que chegou à Entrada desde a tarde → `05 Pré-processado` |
+| **07:47** | **Claude (rodada da manhã, automática)** | Refina, conecta, separa direto × aprovação, escreve relatório |
+| **08:30** | Spark | **Briefing** por e-mail: agenda, tarefas, quantas notas aguardam aprovação |
+| **12:30** | **Você + ChatGPT** (10 min) | O ChatGPT lê `15 Para aprovar` e `Sugestões de conexão`; você aprova ou corrige por voz |
+| **13:00** | Codex | Move o aprovado para `20 Aprovado` e grava no Obsidian; correções viram pedido para o Claude |
+| **13:30** | Spark | Executa: tarefas e agenda a partir de `20 Aprovado`; pesquisas pedidas |
+| **16:00** | Spark | Pré-processa o que chegou desde a manhã |
+| **17:47** | **Claude (rodada da tarde, automática)** | Mesmo trabalho + pedidos de correção + resultados de pesquisa |
+| **20:30** | **Você + ChatGPT** (10 min) | Segunda aprovação por voz |
+| **21:00** | Codex + Spark | Grava no cofre; executa |
+| **23:00** | Spark | Resumo do dia em `30 Ação (Spark)` |
 
-**Termômetro semanal** (cada ferramenta, olhando o próprio painel de uso):
-
-- **Até 50% usados na quarta-feira** → verde, segue o plano.
-- **50–75% na quarta** → amarelo: a triagem pesada passa para o Antigravity; Claude e Codex só fazem revisão e conexões.
-- **Mais de 75% antes de sexta** → vermelho: a ferramenta sai da rotina até renovar; sobe a 1ª reserva da seção 2.
-- **Sempre guardar ~20% do teto semanal** de Claude e de Codex para emergências e para conversar com você.
-
----
-
-## 5. Painel de cotas
-
-Uma planilha Google em `Segundo Cérebro/90 Pedidos/Painel de cotas`. **Toda ferramenta, ao terminar uma rodada, escreve uma linha.**
-Modelo das colunas em [`templates/painel-de-cotas.md`](../templates/painel-de-cotas.md).
-
-Antes de começar, cada IA lê as últimas linhas do Painel:
-
-- Se a ferramenta dela está **vermelha** → não começa; escreve o pedido para a reserva em `Pedidos`.
-- Se outra ferramenta está **vermelha** → assume o trabalho dela, conforme a seção 2.
-
-As porcentagens vêm **do painel de uso de cada ferramenta** (Claude: configurações → uso; Codex: indicador de uso do app;
-Antigravity: indicador de cota no próprio app). Nunca estimar de cabeça.
+As duas rodadas do Claude ficam **10 horas** uma da outra, então **cada uma usa uma janela de 5 horas própria**,
+e entre elas você tem cota livre para conversar com o Claude.
 
 ---
 
-## 6. Economia de tokens — regras para todas as IAs
+## 4. Cotas
 
-1. **Ler só o que é novo.** A triagem olha arquivos da Entrada modificados depois da última rodada (data registrada no Painel). Nunca reler tudo.
-2. **Índice antes do cofre.** Para propor conexões, ler `Índice` (títulos e assuntos), não as notas inteiras. Abrir uma nota só quando o título indicar relação.
-3. **Lotes.** Juntar até ~20 arquivos por rodada. Uma rodada grande custa menos que vinte pequenas.
-4. **Passagem curta.** Cada etapa entrega à seguinte uma passagem de **no máximo 15 linhas** (formato abaixo), não a conversa inteira.
-5. **Modelo certo para o trabalho.** Triagem simples → modelo mais leve da ferramenta; conexões difíceis e revisão de autoria → modelo mais forte.
-6. **Leitura longa vai para o Gemini.** Arquivo enorme ou o cofre inteiro → Antigravity ou Gemini Notebook, nunca Claude ou Codex.
-7. **Nada de "conferir de novo por garantia".** A revisão é feita uma vez, por outra IA, e registrada.
+### Janela de 5 horas
 
-### Formato da passagem (handoff)
+- Cada rodada do Claude usa **no máximo ~60% da janela**. Se o lote for maior, refina o mais antigo primeiro e deixa o resto para a próxima rodada (registrado no relatório).
+- Os outros ~40% ficam para você conversar com o Claude e para urgências.
 
-```
-PASSAGEM — <de> → <para> — <AAAA-MM-DD HH:MM>
-Feito: <n> notas triadas em 10 Triado (lista no Índice, seção "novas")
-Precisa de você: <n> rascunhos de pensamento aguardando aprovação
-Dúvidas de autoria: <n> (em Pendências)
-Pedidos abertos para <para>: <lista curta>
-Cota de <de>: <verde/amarelo/vermelho>, renova <quando>
-```
+### Teto semanal
 
----
-
-## 7. Fila de pedidos — formato completo
-
-Documento `90 Pedidos/Pedidos para o Claude` (e, se quiser, um igual para cada ferramenta):
-
-```
-- [ ] 2026-11-08 | de: Spark | para: Claude | prioridade: alta | custo: M | processar a Entrada de hoje
-- [ ] 2026-11-08 | de: Você  | para: Claude | prioridade: média | custo: G | ligar notas de Civil III às de OAB
-- [x] 2026-11-07 | de: Codex | para: Claude | prioridade: baixa | custo: P | refazer nota X | feito: nota refeita, autoria marcada incerta
-```
-
-- **custo**: `P` (cabe numa conversa curta), `M` (uma rodada de triagem), `G` (vários lotes; distribuir pela semana).
-- Pedido `G` com a ferramenta amarela → vai para a reserva ou fica para o sábado.
-
----
-
-## 8. VS Code e GitHub Desktop
-
-**VS Code — a bancada.** Abra a pasta deste repositório. Com as extensões do Claude Code e do Codex instaladas, você
-conversa com as duas ali mesmo e vê as mudanças nos arquivos lado a lado. Use para revisar scripts e regras.
-O cofre do Obsidian também pode ser aberto no VS Code para conferir mudanças, mas quem escreve nele é o Codex, com sua aprovação.
-
-**GitHub Desktop — o portão de aprovação.** Cada IA trabalha numa branch com o próprio nome:
-
-| Prefixo da branch | De quem |
+| Situação na quarta-feira | O que fazer |
 |---|---|
-| `claude/…` | Claude |
-| `codex/…` | Codex |
-| `antigravity/…` | Antigravity |
+| Até 50% do teto semanal | Verde — segue a rotina |
+| 50–75% | Amarelo — o Spark passa a resumir mais no pré-processamento; o Claude só refina o que for novo e conecta, sem reler |
+| Mais de 75% | Vermelho — só a rodada da tarde do Claude; o Antigravity assume a manhã (tudo como `aguarda aprovação`) |
 
-Você abre o GitHub Desktop, vê o que cada uma mudou e junta na principal só o que aprovar. Assim duas IAs nunca
-sobrescrevem o trabalho uma da outra. Lembrete: este repositório é **público** e guarda só regras e scripts.
-Se um dia quiser versionar o cofre, crie **outro repositório, privado**, e decida isso à parte.
+**Sempre guardar ~20% do teto semanal do Claude** para as suas conversas. O Codex gasta pouco (captura e gravação);
+se ele esgotar, a captura passa para áudio no celular (seção 6).
+
+### Painel de cotas
+
+A pasta `90 Pedidos e cotas/Relatórios de rodada` **é o painel**: cada ferramenta escreve um relatório por rodada
+(modelo em [`templates/relatorio-de-rodada.md`](../templates/relatorio-de-rodada.md)). O Claude agendado
+não enxerga o próprio medidor de uso; ele registra o volume processado, e você ou o Codex completam a porcentagem
+quando quiserem, olhando o medidor de cada app.
 
 ---
 
-## 9. Plano de contingência
+## 5. Economia de tokens
+
+1. **Pré-processamento no Google.** O Claude lê `05 Pré-processado` em vez da transcrição bruta sempre que o Spark já tiver passado; volta à fonte só para conferir citação ou autoria.
+2. **Só o novo.** Cada rodada lê apenas arquivos criados depois do último relatório do Claude.
+3. **Índice antes do cofre.** Conexões partem do `Índice`, não da leitura de todas as notas.
+4. **Lotes.** Uma rodada grande custa menos que muitas pequenas.
+5. **Passagem curta.** Máximo de 15 linhas entre etapas.
+6. **Leitura gigante vai para o Google.** O cofre inteiro ou um PDF enorme → Spark ou Antigravity.
+
+---
+
+## 6. Contingência
 
 | Situação | O que acontece |
 |---|---|
-| Claude sem cota | Antigravity (Gemini) faz a triagem com as mesmas regras (`GEMINI.md`); Codex revisa |
-| Codex sem cota (como em 8/11) | Claude faz a revisão leve; nada vai para o cofre; notas ficam em `10 Triado` com `status: rascunho` até o Codex voltar |
-| Antigravity sem cota | Leituras longas vão para o Gemini Notebook; scripts esperam |
-| Spark indisponível | Claude gera `30 Ação/Tarefas pendentes` e, com sua autorização, cria os eventos pela Agenda |
-| Todos vermelhos | Só a Entrada recebe material; nada se perde; processa quando renovar |
-| Conflito entre IAs | Vale a regra mais restritiva; a dúvida vai para `Pendências` e você decide |
+| **ChatGPT/Codex sem cota** | Você grava um **áudio no celular** e salva em `00 Entrada`; o Spark transcreve; o Claude refina. A gravação no cofre espera o Codex voltar |
+| **Claude sem cota** | A rodada é pulada e registrada; o Spark segue pré-processando. Se passar de um dia, o Antigravity refina com as regras do `CLAUDE.md`, e tudo vai para `15 Para aprovar` |
+| **Spark indisponível** | O Claude lê direto da `00 Entrada` (gasta mais) e cria a lista de tarefas em `30 Ação` |
+| **Antigravity sem cota** | Leituras gigantes esperam o sábado |
+| **Material fora do piloto** | Fica na Entrada, sem processar, citado no relatório |
+| **Conflito entre IAs** | Vale a regra mais restritiva; a dúvida vai para `15 Para aprovar` |
 
 ---
 
-## 10. Implantação em fases
+## 7. Semana
 
-| Fase | O que | Quem | Pronto quando |
+| Dia | Foco |
+|---|---|
+| Seg–Sex | Rotina da seção 3 |
+| Sáb | Gemini Notebook gera estudo da semana (Faculdade/OAB); Antigravity faz leitura do cofre e lista duplicatas → vira pedido para o Claude |
+| Dom | Spark monta o plano da semana; o Claude, na rodada da tarde, faz o **relatório semanal** (o que entrou, conexões novas, pendências) |
+
+---
+
+## 8. Implantação
+
+| Fase | O que | Quem | Situação |
 |---|---|---|---|
-| **0** | Suas autorizações (dados reais, pasta no Drive, rodada automática) | Você | Você responder |
-| **1** | Criar `Segundo Cérebro` no Drive, a fila de pedidos e o Painel de cotas | Claude | Pastas e planilha existem |
-| **2** | Colar as instruções no Spark; criar o notebook "Civil III" no Gemini Notebook apontando para `20 Refinado` | Você (5 min) | Spark respondeu ao primeiro pedido |
-| **3** | Abrir este repositório no VS Code e no GitHub Desktop; Codex e Antigravity leem `AGENTS.md` / `GEMINI.md` | Você + Codex | Cada um fez uma branch de teste |
-| **4** | **Piloto de 1 semana só com Civil III** | Todos | Uma semana de Painel preenchido sem ninguém estourar |
-| **5** | Ajustar horários e porcentagens com base no Painel real | Claude + você | Revisão de domingo |
-| **6** | Abrir para as outras áreas (Vida pessoal, Finanças, Ideias) | Todos | — |
+| 0 | Decisões e autorização do piloto | Você | **Feito** (8/11) |
+| 1 | Pastas no Drive, pedidos, relatórios, instruções para cada IA | Claude | **Feito** (8/11) |
+| 2 | Rodadas automáticas do Claude às 07:47 e 17:47 | Claude | **Feito** (8/11) |
+| 3 | Colar as instruções no Spark e no ChatGPT/Codex; criar o notebook "Faculdade" no Gemini Notebook apontando para `20 Aprovado` | Você | Pendente |
+| 4 | Instalar o Google Drive para desktop no Mac (o Codex grava na Entrada por ele) | Você | Pendente, se ainda não tiver |
+| 5 | Piloto de 1 semana: Faculdade e Ideias | Todos | Começa quando a fase 3 terminar |
+| 6 | Revisão do piloto no domingo; abrir Vida pessoal e Finanças/empresa se você aprovar | Você + Claude | — |

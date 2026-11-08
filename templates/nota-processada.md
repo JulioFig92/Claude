@@ -1,13 +1,14 @@
 ---
 titulo: <ideia em poucas palavras>
-area: <Vida pessoal | Finanças e empresa | Faculdade | Ideias | Triagem>
+area: <Faculdade | Ideias | Vida pessoal | Finanças e empresa | Triagem>
 assunto: <ex.: Civil III / responsabilidade civil>
+natureza: <imaginação | hipótese | plano | decisão | fato>
 tipo: <ideia | pergunta | tarefa | estudo | registro | referência>
-autoria: <dono | outra pessoa (quem) | relato | incerta>
-fonte: <arquivo de origem em 00 Entrada + trecho ou minuto>
+autoria: <dono | sugestão do ChatGPT | outra pessoa (quem) | relato | incerta>
+fonte: <arquivo de origem + trecho ou minuto>
 data_da_fonte: <data que consta na fonte, ou "não informada">
-processado_em: <AAAA-MM-DD>
-status: <rascunho | aprovado>
+refinado_em: <AAAA-MM-DD>
+caminho: <direto | aguarda aprovação>
 tags: []
 ---
 
@@ -15,7 +16,7 @@ tags: []
 
 <O que a ideia diz, em poucas frases. Síntese, não transcrição.>
 
-## Trechos da fonte
+## Nas palavras do dono
 
 > <citação literal, só se estiver na fonte>
 
@@ -23,10 +24,10 @@ tags: []
 
 - [ ] <tarefa, se houver> 📅 <data, se houver>
 
-## Conexões propostas
+## Conexões
 
-- [[<nota existente>]] — <por que se relaciona: conceito aplicado, contraponto, evolução da ideia…>
+- [[<nota existente>]] — <tipo: aplica | contradiz | evolui de | exemplo de | depende de | relacionado> — <por quê>
 
 ## Dúvidas para o dono
 
-- <autoria incerta, trecho ilegível, área duvidosa…>
+- <natureza duvidosa, autoria incerta, trecho ilegível, área duvidosa…>
