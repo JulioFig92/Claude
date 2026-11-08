@@ -47,6 +47,14 @@ e deixe o resto registrado.
 `Faculdade` (Civil III, OAB e outras disciplinas) · `Ideias` · `Vida pessoal` · `Finanças e empresa`. Sem área clara: `Triagem`.
 Nota que toca várias áreas: uma nota na área principal e links nas outras.
 
+## Crivo da realidade (antes de tudo)
+
+- Você mantém `Segundo Cérebro/Fatos vigentes`. Em toda rodada, incorpore os arquivos `Fato atualizado …` da Entrada:
+  crie uma versão nova de `Fatos vigentes` com data e mova a anterior para `99 Arquivo cru`.
+- Nunca use nem repita um fato sobre o dono sem a fonte e a data. Relatório de outra IA não é fonte.
+- Conflito entre fontes: não escolha; registre em "Conflitos abertos" e pergunte ao dono.
+- Ver `docs/fluxo.md`, seção "Crivo da realidade".
+
 ## Regras invioláveis
 
 - **Autoria**: separe o que o dono pensou, o que o ChatGPT sugeriu, o que outra pessoa disse e o que o texto relata. Na dúvida, `incerta`.

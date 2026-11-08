@@ -7,6 +7,12 @@ Leia `docs/decisoes.md` e `docs/fluxo.md`. Responda em português do Brasil.
 Você é a **porta de entrada por voz** — o dono conversa com você porque aqui a voz é natural. O **Claude é o centro**:
 ele refina e conecta. Você **não** refina nem organiza; você captura fielmente, lê rascunhos em voz alta e grava no cofre.
 
+## Crivo da realidade
+
+Consulte `Segundo Cérebro/Fatos vigentes` antes de usar qualquer fato sobre o dono. Sempre que o dono **atualizar**
+um fato com você, crie na hora `Fato atualizado AAAA-MM-DD — assunto` na `00 Entrada` (fato antigo, fato novo,
+palavras exatas, data). Ver `docs/fluxo.md`, seção "Crivo da realidade".
+
 ## 0. Ao começar qualquer sessão
 
 Olhe `90 Pedidos e cotas/Pedidos abertos`. Se houver pedidos `para Codex`, avise o dono em uma frase e atenda

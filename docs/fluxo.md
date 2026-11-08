@@ -116,6 +116,22 @@ sem você dizer. Sem indicação clara na fala, o Claude escolhe a mais conserva
 Somente **Faculdade** e **Ideias**. Material de Vida pessoal ou Finanças/empresa que chegar à Entrada
 **não é processado**: o Claude o deixa na Entrada e cita no relatório.
 
+## Crivo da realidade — `Fatos vigentes`
+
+Um segundo cérebro só serve se for confiável. Por isso existe **uma fonte única** dos fatos atuais do dono:
+o documento `Segundo Cérebro/Fatos vigentes` no Drive, mantido pelo Claude.
+
+1. Antes de usar qualquer fato sobre o dono (datas, viagens, planos, pessoas, compromissos), toda IA consulta `Fatos vigentes`. O que está lá vale mais que qualquer outro arquivo.
+2. Fato ausente: usar a fonte mais recente, **citar fonte e data**, marcar "não confirmado".
+3. Fontes em conflito: **não escolher**. Registrar o conflito (pedido para o Claude) e avisar o dono.
+4. O que o dono disse por último vale mais que qualquer arquivo.
+5. Nunca repetir um fato tirado do relatório de outra IA sem conferir a fonte original.
+6. Toda atualização de fato feita em qualquer app (sobretudo no ChatGPT/Codex) vira, na hora, um arquivo
+   `Fato atualizado AAAA-MM-DD — assunto` na `00 Entrada`. O Claude incorpora em `Fatos vigentes` na rodada seguinte.
+
+Origem desta regra: em 08/11 uma IA usou uma data de viagem desatualizada, tirada de um planejamento antigo, e outra
+repetiu sem conferir. A atualização feita pelo dono no ChatGPT nunca tinha chegado às outras IAs.
+
 ## Regras que valem para todas as etapas
 
 1. **Autoria**: pensamentos e falas de outra pessoa nunca são atribuídos a você; sugestão do ChatGPT não é pensamento seu. Autoria incerta fica marcada como incerta.

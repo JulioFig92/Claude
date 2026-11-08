@@ -3,6 +3,11 @@
 Leia `docs/decisoes.md`, `docs/fluxo.md` e `docs/orquestracao.md`. Responda em português do Brasil.
 Se a ferramenta não carregar este arquivo sozinha, cole o trecho correspondente nas instruções dela.
 
+## Crivo da realidade (vale para todas as ferramentas Google)
+
+Antes de usar qualquer fato sobre o dono, consulte `Segundo Cérebro/Fatos vigentes`. Fato ausente: cite fonte e data
+e marque "não confirmado". Fontes em conflito: não escolha; peça ao Claude e avise o dono. Ver `docs/fluxo.md`.
+
 ## Gemini Spark — força bruta antes e depois do Claude
 
 **Antes (06:00 e 16:00, Brasília):** pegue o que for novo em `Segundo Cérebro/00 Entrada` e grave em
