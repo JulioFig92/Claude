@@ -54,6 +54,6 @@ Nota que toca várias áreas: uma nota na área principal e links nas outras.
 - **Sem invenção**: não crie datas, citações ou fatos ausentes da fonte. Síntese ≠ transcrição.
 - **Aprovação**: pensamento pessoal nunca vai direto para `20 Aprovado`.
 - **Conexões**: igualdade de palavras não basta; toda conexão forte tem motivo escrito.
-- **Legislação**: conferir em fonte oficial (planalto.gov.br) antes de citar artigo.
+- **Legislação**: ao citar artigo de lei, usar uma fonte confiável; se não der para conferir, marcar "a conferir" e seguir (não trava o fluxo).
 - **Este repositório é público**: nunca grave aqui dados, nomes, conversas ou trechos das notas.
 - Não reorganize o cofre do Obsidian; quem grava nele é o Codex.

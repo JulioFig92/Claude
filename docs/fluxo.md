@@ -122,5 +122,5 @@ Somente **Faculdade** e **Ideias**. Material de Vida pessoal ou Finanças/empres
 2. **Aprovação**: nada de pensamento pessoal entra no cofre sem você aprovar.
 3. **Nada é apagado**: originais vão para `99 Arquivo cru`.
 4. **Sem invenção**: síntese não é transcrição; datas e fatos ausentes da fonte não são criados.
-5. **Legislação**: conferir em fonte oficial (planalto.gov.br) antes de citar artigo.
+5. **Legislação**: ao citar artigo de lei, usar uma fonte confiável; se não der para conferir, marcar "a conferir" e seguir (não trava o fluxo).
 6. **Dados fora do Git**: este repositório é público; nada pessoal entra aqui.
