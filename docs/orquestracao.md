@@ -169,7 +169,20 @@ como uma cota só.
 Numa tarefa agendada sem ninguém olhando, ele pode **parar esperando confirmação**. Na primeira semana, abra
 "Agendadas" de manhã e confira se alguma tarefa ficou parada.
 
-## 9. Implantação
+## 9. Modo viagem (Mac desligado, só celular)
+
+| Continua funcionando | Para até a volta |
+|---|---|
+| Claude (rodadas 07:47 e 17:47, na nuvem) | Codex no Mac (gravação no cofre) |
+| Gemini Tarefas / Spark (todas as rotinas, na nuvem) | VS Code, Antigravity, GitHub Desktop |
+| Gemini Notebook, Drive, Gmail, Agenda | — |
+
+- **Captura por voz no celular:** converse no app do ChatGPT e, no fim, peça "faça o pacote de voz desta conversa"; compartilhe o texto com o app do Google Drive, na pasta `00 Entrada`. Alternativa: grave um áudio e salve direto na `00 Entrada`; o Spark transcreve às 06:00 ou 16:00.
+- **Aprovação:** diga ao Claude, no app, "aprovo …" ou "corrijo … para …". O Claude move os arquivos de `15 Para aprovar` para `20 Aprovado` e registra no relatório. Também vale incluir as aprovações na seção 4 do pacote de voz.
+- **Cofre do Obsidian:** o que for aprovado se acumula em `20 Aprovado`; na volta, o Codex grava tudo de uma vez, com backup e conferência.
+- **Cotas:** o Codex fica parado; Claude e Spark seguem nos horários normais.
+
+## 10. Implantação
 
 | Fase | O que | Quem | Situação |
 |---|---|---|---|
