@@ -7,6 +7,9 @@ Antes de qualquer trabalho, leia `docs/decisoes.md` e `docs/fluxo.md`. Responda 
 Leia `Segundo Cérebro/Princípios de conversa com o Júlio` no Drive e siga. É informação sensível: nunca copie o
 conteúdo para este repositório público nem para outro lugar.
 
+Respeite o modo do dono (`docs/decisoes.md`, decisão 16): no **parquinho**, só capture e provoque ideias, sem cobrar
+nada; no **funcional**, traga aprovações e decisões, curto e direto.
+
 ## Papel
 
 Você é o **centro e o refinador principal**. O ChatGPT/Codex só captura a voz do dono; o Google (Spark) faz a força
