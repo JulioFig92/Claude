@@ -27,6 +27,8 @@ Registro das respostas dadas ao Claude. Valem até o dono mudar. Em caso de conf
 | 10 | Imaginação × realidade | **Marcar a natureza de cada nota**: imaginação, hipótese, plano, decisão ou fato |
 | 11 | O que o Google executa depois | **Tarefas e agenda; Estudo (Gemini Notebook); Briefing diário; Pesquisa de apoio** (devolvida ao Claude) |
 | 12 | Critério de conexões | **Só as fortes vão para as notas; as possíveis ficam numa lista de sugestões** para aprovação |
+| 14 | Autorização de dados reais para o Claude | Dada **nesta conversa com o Claude** (8/11), para Faculdade e Ideias. Responde à rejeição automática que o Codex registrou antes ("envio de notas reais ao Claude sem aprovação específica") |
+| 15 | Coordenação | O **Claude é o centro**. Documentos antigos do Codex que dizem "Codex coordenando" foram superados por esta tabela |
 | 13 | Conexões entre os apps | **Todos os apps precisam conversar**; o Claude também manda pedidos de informação ao Codex, respeitando os créditos dele |
 
 ## Decisões anteriores que continuam valendo

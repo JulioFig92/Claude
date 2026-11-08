@@ -139,7 +139,7 @@ quando quiserem, olhando o medidor de cada app.
 
 ## 8. O Spark no Mac e as ferramentas locais
 
-O Spark (no app Gemini também chamado de "Task") roda na nuvem, mas no app do Mac também trabalha com **pastas locais
+O Spark (no app Gemini em português aparece como **"Gemini Tarefas"**) roda na nuvem, mas no app do Mac também trabalha com **pastas locais
 conectadas** e pode ler a tela quando você compartilha. Pastas conectadas são as mesmas que o VS Code, o Antigravity e o
 GitHub Desktop abrem, então o que um mexe, os outros veem.
 
