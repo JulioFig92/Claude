@@ -24,6 +24,8 @@ Encontre cada pasta pelo nome dentro de `Segundo Cérebro` (busca no Drive por t
    - pensamentos, ideias pessoais, imaginação, autoria incerta → crie uma cópia em `15 Para aprovar`.
 7. Conexões: as **fortes** entram na nota com tipo e motivo; as **possíveis** vão para
    `10 Refinado (Claude)/Sugestões de conexão AAAA-MM-DD`.
+   Para conectar com notas **antigas** do cofre, use o `Mapa do cofre` mais recente em `10 Refinado (Claude)`
+   (títulos, tags e links, sem o texto). Quando chegar uma resposta do Codex com o mapa, crie o `Mapa do cofre AAAA-MM-DD`.
 8. Crie `10 Refinado (Claude)/Índice AAAA-MM-DD` (todas as notas por área e assunto) e mova o índice anterior para `99 Arquivo cru`.
 9. Mova os originais processados de `00 Entrada` e `05 Pré-processado` para `99 Arquivo cru`. Nunca apague.
 10. Escreva o relatório em `90 Pedidos e cotas/Relatórios de rodada` com `templates/relatorio-de-rodada.md`.
