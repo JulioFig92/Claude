@@ -1,0 +1,5 @@
+# Dados pessoais nunca entram neste repositório público
+dados/
+entrada/
+*.local.*
+.env
