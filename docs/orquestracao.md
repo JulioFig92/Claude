@@ -146,6 +146,7 @@ quando quiserem, olhando o medidor de cada app.
 | 2 | Rodadas automáticas do Claude às 07:47 e 17:47 | Claude | **Ativas** (8/11), rodando na conversa do Claude que já tem o Drive conectado |
 | 2b | Teste fictício de ponta a ponta: pacote de voz → 5 notas → 3 direto, 2 para aprovar → pedidos para Spark e Codex | Claude | **Feito** (8/11) |
 | 3 | Colar as instruções no Spark e no ChatGPT/Codex; criar o notebook "Faculdade" no Gemini Notebook apontando para `20 Aprovado` | Você | Pendente |
-| 4 | Instalar o Google Drive para desktop no Mac (o Codex grava na Entrada por ele) | Você | Pendente, se ainda não tiver |
+| 4 | Google Drive para desktop no Mac (o Codex grava na Entrada por ele) | Você | **Já instalado**: a pasta Documents do Mac está sincronizada |
+| 4b | Mapa do cofre v1 (Faculdade e Ideias), feito pelo Claude a partir da cópia "Cofre de ensaio" no Drive | Claude | **Feito** (8/11); o Codex só confere diferenças com o cofre ativo |
 | 5 | Piloto de 1 semana: Faculdade e Ideias | Todos | Começa quando a fase 3 terminar |
 | 6 | Revisão do piloto no domingo; abrir Vida pessoal e Finanças/empresa se você aprovar | Você + Claude | — |
