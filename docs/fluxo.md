@@ -53,15 +53,41 @@ Um arquivo por conversa, nome `Voz AAAA-MM-DD HHhMM — <assunto>`. Modelo: [`te
 Duas partes separadas: **transcrição** (o mais completa possível) e **resumo do ChatGPT**, marcando em cada ponto
 se foi **dito por você** ou **sugerido pelo ChatGPT**.
 
-## Pedidos entre as IAs
+## Pedidos e respostas entre as IAs
 
-Cada pedido é **um arquivo** em `90 Pedidos e cotas/Pedidos abertos`, com o nome:
+Nenhuma dessas IAs consegue chamar a outra diretamente. Elas se falam por **caixa de correio no Drive**:
+cada pedido é **um arquivo** em `90 Pedidos e cotas/Pedidos abertos`, com o nome:
 
 ```
 Pedido AAAA-MM-DD — de <quem> para <quem> — <prioridade> — <custo P/M/G> — <assunto>
 ```
 
-O conteúdo explica o pedido. Quem atende move o arquivo para `Pedidos atendidos` e cita o resultado no relatório da rodada.
+A resposta volta como arquivo em `00 Entrada`, para o Claude refinar se for conteúdo novo:
+
+```
+Resposta AAAA-MM-DD — de <quem> para <quem> — <assunto>
+```
+
+Quem atende move o pedido para `Pedidos atendidos` e cita o resultado no relatório da rodada.
+
+### Mapa de conexões
+
+| De → Para | Como | Quando o destino lê | Gasta crédito de |
+|---|---|---|---|
+| Você → ChatGPT/Codex | Voz | Na hora | ChatGPT |
+| Você → Claude | Esta conversa, ou um pedido no Drive | Na hora / 07:47 e 17:47 | Claude |
+| ChatGPT/Codex → Claude | Pacote de voz em `00 Entrada`; pedidos; respostas | 07:47 e 17:47 | Claude (leitura) |
+| Claude → Codex | Pedido "para Codex" | **Quando você abre o Codex** (ele confere ao começar) e ele tem créditos | Codex |
+| Claude → Spark | Pedido "para Spark" | 06:00 e 16:00 | Google |
+| Spark → Claude | `05 Pré-processado`; pesquisas e respostas em `00 Entrada` | 07:47 e 17:47 | Claude (leitura) |
+| Codex ↔ Spark | Pedidos | Conforme cada um | Do destino |
+| Claude → Antigravity | Pedido "para Antigravity" | Quando você abre o Antigravity | Google |
+| Gemini Notebook | Lê `20 Aprovado`; o que gerar de útil você ou o Spark salvam na Entrada | Ao abrir | Google |
+| Claude → você | Resposta nesta conversa + relatórios; briefing do Spark | — | — |
+
+**Créditos:** pedido para o Codex é o mais caro, porque os créditos dele são os mais curtos. O Claude manda **no máximo um
+pedido por rodada para o Codex**, juntando todas as perguntas, e só quando a informação não existir no Drive.
+O Codex atende tudo numa passada só.
 
 ## Natureza de cada nota
 

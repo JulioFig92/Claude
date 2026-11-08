@@ -28,6 +28,9 @@ Encontre cada pasta pelo nome dentro de `Segundo Cérebro` (busca no Drive por t
 9. Mova os originais processados de `00 Entrada` e `05 Pré-processado` para `99 Arquivo cru`. Nunca apague.
 10. Escreva o relatório em `90 Pedidos e cotas/Relatórios de rodada` com `templates/relatorio-de-rodada.md`.
 11. Se precisar de pesquisa na web ou leitura gigante, crie um pedido para o Spark em `Pedidos abertos`.
+12. Se precisar de informação que só o ChatGPT/Codex tem (o que o dono disse numa conversa, estado do cofre no Mac),
+    crie **no máximo um** pedido `para Codex` por rodada, juntando todas as perguntas. Os créditos do Codex são os mais curtos.
+13. Leia as `Resposta … para Claude` que chegarem em `00 Entrada` como material novo.
 
 O conector do Drive cria e move arquivos, mas não edita conteúdo: nunca tente reescrever um arquivo; crie um novo e mova o antigo.
 
