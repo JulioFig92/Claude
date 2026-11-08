@@ -116,6 +116,18 @@ sem você dizer. Sem indicação clara na fala, o Claude escolhe a mais conserva
 Somente **Faculdade** e **Ideias**. Material de Vida pessoal ou Finanças/empresa que chegar à Entrada
 **não é processado**: o Claude o deixa na Entrada e cita no relatório.
 
+## Estrutura do Drive (fora da `Segundo Cérebro`)
+
+Desde 08/11 o "Meu Drive" espelha as áreas do cofre do Obsidian:
+
+```
+00 Triagem · 01 Faculdade · 02 Ideias · 03 Vida pessoal · 04 Finanças e empresa · 05 Túlio · 06 Sistema e IA · 99 Arquivo · Segundo Cérebro
+```
+
+- Material de autoria do Túlio fica em `05 Túlio`; a empresa dele, em `04 Finanças e empresa/Empresa do Túlio`.
+- `Computadores/Documents` (sincronizada com o Mac, com o projeto do Codex e a cópia do cofre) **não** é movida por IA nenhuma.
+- Toda reorganização gera um manifesto em `99 Arquivo` para poder ser desfeita.
+
 ## Crivo da realidade — `Fatos vigentes`
 
 Um segundo cérebro só serve se for confiável. Por isso existe **uma fonte única** dos fatos atuais do dono:
