@@ -137,7 +137,39 @@ quando quiserem, olhando o medidor de cada app.
 
 ---
 
-## 8. Implantação
+## 8. O Spark no Mac e as ferramentas locais
+
+O Spark (no app Gemini também chamado de "Task") roda na nuvem, mas no app do Mac também trabalha com **pastas locais
+conectadas** e pode ler a tela quando você compartilha. Pastas conectadas são as mesmas que o VS Code, o Antigravity e o
+GitHub Desktop abrem, então o que um mexe, os outros veem.
+
+| Pasta no Mac | Conectar ao Spark? | Quem mais usa | Para quê |
+|---|---|---|---|
+| `Documents/ChatGPT` (projeto do Codex) | **Sim** (já conectada) | Codex, VS Code | Spark lê as saídas do Codex e alimenta a Entrada |
+| Clone local deste repositório (aberto no GitHub Desktop) | **Sim, só leitura** | VS Code, Antigravity, GitHub Desktop, Claude Code | Spark lê as regras (`GEMINI.md`, `docs/`) direto da fonte. **Nunca escreve dados aqui: o repositório é público** |
+| Cofre do Obsidian (iCloud) | **Nunca** | Só o Codex, com aprovação | O Spark edita arquivos de pastas conectadas sem perguntar (só pede confirmação para apagar ou compartilhar) e o backup dura 24 h |
+
+**Quem faz o quê no Mac, o tempo todo:**
+
+| Ferramenta | Função permanente |
+|---|---|
+| Spark | Agendado na nuvem (06:00, 08:30, 13:30, 16:00, 21:00, 23:00) + leitura das pastas conectadas |
+| Antigravity | Scripts do repositório, leitura gigante do cofre (sábado) e reserva quando alguém fica vermelho |
+| VS Code | Bancada: extensões do Claude Code e do Codex abertas no clone do repositório e na pasta do Codex |
+| GitHub Desktop | Puxa as branches `claude/`, `codex/` e `antigravity/`; você junta só o que aprovar |
+| Codex | Voz, aprovação por voz, gravação no cofre, pedidos `para Codex` |
+| Claude | Rodadas 07:47 e 17:47; refino e conexões |
+
+**"Tudo o tempo todo" com cota:** cada ferramenta fica **sempre atribuída** a uma função, mas só **gasta** cota no horário
+dela (seção 3). Rodar todas sem parar esgota as janelas de 5 horas e o teto semanal no meio da semana e deixa o sistema
+parado. O Spark e o Antigravity podem consumir do mesmo plano Google AI Pro: até o painel mostrar o contrário, trate
+como uma cota só.
+
+**Ponto de atenção:** o Spark pede confirmação antes de enviar mensagens, alterar dados, comprar ou enviar formulários.
+Numa tarefa agendada sem ninguém olhando, ele pode **parar esperando confirmação**. Na primeira semana, abra
+"Agendadas" de manhã e confira se alguma tarefa ficou parada.
+
+## 9. Implantação
 
 | Fase | O que | Quem | Situação |
 |---|---|---|---|

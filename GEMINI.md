@@ -21,6 +21,9 @@ Não mova nem apague os originais: o Claude faz isso.
 - **Resumo do dia** (23:00) em `30 Ação (Spark)`.
 - Depois de cada etapa, escreva um relatório em `90 Pedidos e cotas/Relatórios de rodada`.
 
+**No Mac:** use só as pastas conectadas `Documents/ChatGPT` e o clone deste repositório (este, **só leitura**).
+Nunca conecte nem altere o cofre do Obsidian. Nunca grave dados pessoais no repositório: ele é público.
+
 ## Gemini Notebook — estudo
 
 Notebook **"Faculdade"** com fontes da pasta `20 Aprovado` (área Faculdade). Gere resumos, áudios e quizzes.
