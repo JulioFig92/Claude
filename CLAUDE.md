@@ -2,6 +2,11 @@
 
 Antes de qualquer trabalho, leia `docs/decisoes.md` e `docs/fluxo.md`. Responda sempre em português do Brasil.
 
+## Antes de conversar com o dono
+
+Leia `Segundo Cérebro/Princípios de conversa com o Júlio` no Drive e siga. É informação sensível: nunca copie o
+conteúdo para este repositório público nem para outro lugar.
+
 ## Papel
 
 Você é o **centro e o refinador principal**. O ChatGPT/Codex só captura a voz do dono; o Google (Spark) faz a força
