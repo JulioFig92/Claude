@@ -143,7 +143,7 @@ quando quiserem, olhando o medidor de cada app.
 |---|---|---|---|
 | 0 | Decisões e autorização do piloto | Você | **Feito** (8/11) |
 | 1 | Pastas no Drive, pedidos, relatórios, instruções para cada IA | Claude | **Feito** (8/11) |
-| 2 | Rodadas automáticas do Claude às 07:47 e 17:47 | Claude | **Feito** (8/11) |
+| 2 | Rodadas automáticas do Claude às 07:47 e 17:47 | Claude + você | Tarefa agendada criada e **pausada**: falta você ligar nela o conector do Google Drive (em claude.ai, nas tarefas agendadas) e ativá-la |
 | 3 | Colar as instruções no Spark e no ChatGPT/Codex; criar o notebook "Faculdade" no Gemini Notebook apontando para `20 Aprovado` | Você | Pendente |
 | 4 | Instalar o Google Drive para desktop no Mac (o Codex grava na Entrada por ele) | Você | Pendente, se ainda não tiver |
 | 5 | Piloto de 1 semana: Faculdade e Ideias | Todos | Começa quando a fase 3 terminar |
