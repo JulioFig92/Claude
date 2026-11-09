@@ -20,6 +20,8 @@ Voz ──► CODEX (cérebro: entende e planeja) ──Ordem──► CLAUDE (m
 
 > **Este repositório é público.** Nenhum dado pessoal, pensamento, conversa ou nome de pessoa entra aqui.
 > Os dados circulam só pelo Google Drive (`Meu Drive/Segundo Cérebro`).
+>
+> **Trocou de IA?** Cole na nova: "Leia Segundo Cérebro/Passagem do bastão e continue de onde parou."
 
 ## Arquivos
 
@@ -27,4 +29,4 @@ Voz ──► CODEX (cérebro: entende e planeja) ──Ordem──► CLAUDE (m
 - [`docs/fluxo.md`](docs/fluxo.md) — pastas, pacote de voz, pedidos, natureza, conexões, aprovação.
 - [`docs/orquestracao.md`](docs/orquestracao.md) — rotina diária e semanal, cotas, contingência, implantação.
 - [`CLAUDE.md`](CLAUDE.md) · [`AGENTS.md`](AGENTS.md) · [`GEMINI.md`](GEMINI.md) — instruções de cada IA.
-- [`templates/`](templates/) — pacote de voz, nota refinada, relatório de rodada.
+- [`templates/`](templates/) — pacote de voz, nota refinada, relatório de rodada, ordem, entrega e passagem do bastão.

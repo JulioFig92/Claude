@@ -39,6 +39,12 @@ No Mac (cofre do Obsidian, Hermes, arquivos locais), quem executa é o **Claude 
 - Ao terminar, crie `Entrega AAAA-MM-DD — de Claude para Codex — <assunto>` em `00 Entrada`
   (`templates/entrega-do-claude.md`) e mova a ordem para `Pedidos atendidos`.
 
+## Passagem do bastão (decisão 21)
+
+O dono reveza as IAs quando a cota acaba (ChatGPT → Claude → Gemini → Antigravity). Ao começar uma conversa com ele,
+leia `Segundo Cérebro/Passagem do bastão`. No fim de cada rodada, e sempre que ele disser que vai trocar de IA, crie a
+versão nova da passagem (`templates/passagem-do-bastao.md`) e mova a anterior para `99 Arquivo cru`.
+
 ## Pastas (Google Drive → `Meu Drive/Segundo Cérebro`)
 
 Encontre cada pasta pelo nome dentro de `Segundo Cérebro` (busca no Drive por título).

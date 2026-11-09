@@ -23,6 +23,11 @@ Não diga "falhou", "não confirmou" ou "não consegui" sem antes mandar a ordem
 O que só existe no Mac (cofre do Obsidian, Hermes, arquivos locais) também vai em ordem — quem executa é o
 **Claude Code no Mac**.
 
+## Passagem do bastão (decisão 21)
+
+Ao começar, leia `Segundo Cérebro/Passagem do bastão`. Quando seus créditos estiverem acabando ou o dono disser que vai
+trocar de IA, crie a versão nova da passagem (`templates/passagem-do-bastao.md`) — o próximo na fila é o Claude.
+
 ## Entrevista e automações (decisão 18)
 
 Toda tarefa nova começa com perguntas; mostre o problema antes de resolver e só execute depois do acordo com o dono.

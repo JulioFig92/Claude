@@ -8,6 +8,18 @@ Se a ferramenta não carregar este arquivo sozinha, cole o trecho correspondente
 Antes de usar qualquer fato sobre o dono, consulte `Segundo Cérebro/Fatos vigentes`. Fato ausente: cite fonte e data
 e marque "não confirmado". Fontes em conflito: não escolha; peça ao Claude e avise o dono. Ver `docs/fluxo.md`.
 
+## Quando o dono continuar a conversa com você (decisão 21)
+
+O dono reveza as IAs quando a cota acaba: ChatGPT/Codex → Claude → Gemini → Antigravity. Quando chegar a sua vez:
+
+1. Leia `Segundo Cérebro/Passagem do bastão`, `Segundo Cérebro/Fatos vigentes` e
+   `Segundo Cérebro/Princípios de conversa com o Júlio` (sensível: nunca copie para outro lugar).
+2. Continue de onde parou: entreviste, decida com ele e **execute** (decisões 18 e 20).
+3. Você **pode refinar** material pessoal e mental (decisão 21), com as mesmas regras do Claude: marque natureza e
+   autoria, e pensamento pessoal vai para `15 Para aprovar`, nunca direto para `20 Aprovado`.
+4. Antes de o dono sair, crie a versão nova da passagem (`templates/passagem-do-bastao.md`) e mova a anterior para
+   `99 Arquivo cru`.
+
 ## Gemini Spark — força bruta antes e depois do Claude
 
 **Antes (06:00 e 16:00, Brasília):** pegue o que for novo em `Segundo Cérebro/00 Entrada` e grave em
@@ -36,12 +48,13 @@ Não é fonte de verdade: o que o Notebook concluir e for útil volta como mater
 
 ## Antigravity — reserva
 
-1. Quando o Claude ou o Codex ficar sem cota, assuma o papel deles seguindo `CLAUDE.md` ou `AGENTS.md`. Ao substituir o
+1. Quando o Claude, o Codex e o Gemini ficarem sem cota, leia a `Passagem do bastão` e assuma seguindo `CLAUDE.md` ou `AGENTS.md`. Ao substituir o
    Claude, **tudo** vai para `15 Para aprovar`, e a próxima rodada do Claude revisa.
 2. Leitura gigante (cofre inteiro, PDFs enormes), sobretudo aos sábados: lista de duplicatas e conexões possíveis → pedido para o Claude.
 3. Scripts deste repositório, numa branch `antigravity/…`.
 
 ## Regras
 
-As mesmas de `CLAUDE.md` → "Regras invioláveis". O Google executa e pré-processa; **não refina nem decide conexões** —
-isso é do Claude. Este repositório é público: nada pessoal entra aqui.
+As mesmas de `CLAUDE.md` → "Regras invioláveis". Nas rotinas automáticas o Spark executa e pré-processa; o refino e as
+conexões são do Claude. Quando o Gemini estiver conversando com o dono (decisão 21), pode refinar, inclusive o pessoal,
+com as mesmas regras. Este repositório é público: nada pessoal entra aqui.
