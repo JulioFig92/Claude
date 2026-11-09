@@ -19,7 +19,7 @@ Horários em **Brasília (UTC−3)**.
 | **VS Code** | Bancada: ver lado a lado o que as IAs mudaram no repositório e no cofre | Seu Mac | — |
 | **GitHub Desktop** | Portão de aprovação das **regras e scripts** (branches `claude/`, `codex/`, `antigravity/`) | Seu Mac | — |
 
-**Princípio:** o Claude é o centro, então **a cota do Claude é a mais preciosa**. Tudo o que for volume, leitura longa,
+**Princípio:** o Codex coordena e o Claude refina; a cota dos dois é a mais preciosa (decisão 17). Tudo o que for volume, leitura longa,
 transcrição ou execução vai para o Google, que tem cota mais folgada e trabalha 24 h. O Claude recebe o material já
 pré-processado e gasta a cota só com o que só ele faz: refinar, separar natureza e autoria, conectar.
 

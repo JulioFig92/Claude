@@ -1,18 +1,18 @@
-# Claude — o centro do segundo cérebro
+# Claude — refinador do segundo cérebro
 
 Este repositório guarda **as regras e o protocolo** de um segundo cérebro processado por várias IAs:
 
 ```
-Voz ──► ChatGPT/Codex ──► Spark (força bruta) ──► CLAUDE (refina e conecta) ──► aprovação por voz ──► Obsidian
-                                                         │
-                                                         └──► Spark + Gemini Notebook executam (tarefas, agenda, estudo, pesquisa)
+Voz ──► CODEX (maestro) ──► Spark (força bruta) ──► Claude (refina e conecta) ──► aprovação ──► Codex grava no Obsidian
+                                                            │
+                                                            └──► Spark + Gemini Notebook executam (tarefas, agenda, estudo, pesquisa)
 ```
 
 | Quem | Papel |
 |---|---|
-| **ChatGPT / Codex** | Porta de entrada por voz; lê rascunhos para aprovação; grava no Obsidian |
+| **ChatGPT / Codex** | **Maestro**: porta de entrada por voz, distribui as tarefas, lê rascunhos para aprovação e grava no Obsidian |
 | **Gemini Spark** | Força bruta antes (pré-processa) e depois (tarefas, agenda, briefing, pesquisa) |
-| **Claude** | **Centro**: refina tudo e faz as conexões principais |
+| **Claude** | **Refinador**: refina tudo, faz as conexões principais e mantém os fatos vigentes |
 | **Gemini Notebook** | Estudo (Faculdade, OAB) |
 | **Antigravity** | Reserva, leitura gigante, scripts |
 | **VS Code + GitHub Desktop** | Bancada e portão de aprovação das regras |
