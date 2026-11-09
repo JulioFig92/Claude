@@ -6,7 +6,8 @@ Registro das respostas dadas ao Claude. Valem até o dono mudar. Em caso de conf
 
 - **ChatGPT/Codex = porta de entrada por voz.** Só por um motivo: lá o dono conversa por voz de forma natural.
   Ali chegam as ideias mais soltas e imaginativas.
-- **Claude = centro e refinador principal.** Faz as conexões principais e refina tudo: o material bruto e o imaginativo.
+- **Codex = maestro** (desde 09/11, decisão 17): interlocutor principal, distribui as tarefas e grava no cofre.
+- **Claude = refinador principal.** Faz as conexões principais, refina tudo (o material bruto e o imaginativo) e mantém `Fatos vigentes`.
 - **Google = força bruta**, antes e depois do Claude:
   - **antes**: o **Spark** pré-processa o volume pesado (transcrições longas, PDFs) e entrega ao Claude;
   - **depois**: executa o que o Claude refinou.
@@ -28,7 +29,8 @@ Registro das respostas dadas ao Claude. Valem até o dono mudar. Em caso de conf
 | 11 | O que o Google executa depois | **Tarefas e agenda; Estudo (Gemini Notebook); Briefing diário; Pesquisa de apoio** (devolvida ao Claude) |
 | 12 | Critério de conexões | **Só as fortes vão para as notas; as possíveis ficam numa lista de sugestões** para aprovação |
 | 14 | Autorização de dados reais para o Claude | Dada **nesta conversa com o Claude** (8/11), para Faculdade e Ideias. Responde à rejeição automática que o Codex registrou antes ("envio de notas reais ao Claude sem aprovação específica") |
-| 15 | Coordenação | O **Claude é o centro**. Documentos antigos do Codex que dizem "Codex coordenando" foram superados por esta tabela |
+| 15 | Coordenação (08/11) | ~~O Claude é o centro~~ — **substituída pela decisão 17** |
+| 17 | Coordenação (09/11) | **Codex maestro, Claude refina.** O dono prefere começar pelo Codex, que distribui as tarefas e grava no cofre; o Claude refina, faz as conexões principais e mantém `Fatos vigentes`. O dono pode começar por qualquer um dos dois |
 | 16 | Dois modos de conversa | **"Parquinho"**: o dono só gera ideias por voz; as IAs capturam e não cobram execução nem aprovação. **"Funcional"**: aprovações, decisões, estudo e tarefas. O dono avisa o modo; sem aviso, perguntar em uma frase. Detalhes só no documento privado de princípios de conversa |
 | 13 | Conexões entre os apps | **Todos os apps precisam conversar**; o Claude também manda pedidos de informação ao Codex, respeitando os créditos dele |
 
