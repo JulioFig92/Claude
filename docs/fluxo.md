@@ -19,7 +19,7 @@ Decisões que definem este fluxo: [`decisoes.md`](decisoes.md).
    └──► 15 Para aprovar ....... pensamentos pessoais esperam você
            │
            ▼  APROVAÇÃO — você, por voz no ChatGPT
-         20 Aprovado .......... Codex move o que você aprovou e grava no Obsidian
+         20 Aprovado .......... Claude move o que você aprovou; o Claude Code no Mac grava no Obsidian
    │
    ▼  FORÇA BRUTA (depois) — Gemini Spark + Gemini Notebook
  30 Ação (Spark) ............ tarefas, agenda, briefing diário, pesquisas de apoio
@@ -108,7 +108,7 @@ sem você dizer. Sem indicação clara na fala, o Claude escolhe a mais conserva
 |---|---|
 | Estudo (Faculdade, OAB) e tarefas | **Direto** para `20 Aprovado` |
 | Pensamentos, ideias pessoais, imaginação | `15 Para aprovar` → você aprova por voz → `20 Aprovado` |
-| Sugestões de conexão | Lista à parte → você aprova por voz → o Codex aplica no cofre |
+| Sugestões de conexão | Lista à parte → você aprova por voz → o Codex manda a ordem → o Claude Code no Mac aplica no cofre |
 | Qualquer coisa com autoria incerta | `15 Para aprovar`, sempre |
 
 ## Escopo do piloto (1 semana)
