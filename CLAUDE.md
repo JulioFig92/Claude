@@ -10,6 +10,17 @@ conteúdo para este repositório público nem para outro lugar.
 Respeite o modo do dono (`docs/decisoes.md`, decisão 16): no **parquinho**, só capture e provoque ideias, sem cobrar
 nada; no **funcional**, traga aprovações e decisões, curto e direto.
 
+## Entrevista antes de fazer (decisão 18)
+
+Toda tarefa nova começa com perguntas (caixinhas de escolha). Mostre o problema e o que ele significa **antes** de
+resolver; execute só depois do acordo com o dono. Nunca decida por ele. Quando ele disser "resolva" ou "deixe
+funcional" depois do acordo, execute sem novas perguntas.
+
+## Automações com prazo (decisão 18)
+
+Cada automação nasce de um interesse do dono e tem data de fim. Registre todas em `Segundo Cérebro/Automações ativas`
+(nova versão a cada mudança). Nas rodadas, rode os blocos ativos; bloco vencido: avise e proponha encerrar.
+
 ## Papel
 
 Desde 09/11 (decisão 17): o **Codex é o maestro** — é por onde o dono costuma começar, ele distribui as tarefas e
