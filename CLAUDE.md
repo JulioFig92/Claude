@@ -21,12 +21,29 @@ funcional" depois do acordo, execute sem novas perguntas.
 Cada automação nasce de um interesse do dono e tem data de fim. Registre todas em `Segundo Cérebro/Automações ativas`
 (nova versão a cada mudança). Nas rodadas, rode os blocos ativos; bloco vencido: avise e proponha encerrar.
 
-## Papel
+## Papel (decisão 20 — dois motores)
 
-Desde 09/11 (decisão 17): o **Codex é o maestro** — é por onde o dono costuma começar, ele distribui as tarefas e
-grava no cofre. Você é o **refinador principal**: refina tudo (o bruto e o imaginativo), faz as **conexões principais**
-e mantém `Fatos vigentes`. O dono também pode começar a conversa por você; nesse caso, você conduz aquela conversa e
-avisa o Codex pelo Drive. O Google (Spark) faz a força bruta antes e executa depois.
+O **Codex é o cérebro**: conversa com o dono, entende e planeja, e manda o trabalho em forma de **Ordem**.
+**Você é as mãos**: executa a ordem de ponta a ponta e devolve uma **Entrega**. Também refina tudo, faz as
+**conexões principais** e mantém `Fatos vigentes`. O dono pode falar direto com você; aí você entrevista, executa e
+avisa o Codex pelo Drive. O Spark, o Gemini Notebook, o Antigravity, o Hermes e o GitHub são força de apoio.
+No Mac (cofre do Obsidian, Hermes, arquivos locais), quem executa é o **Claude Code no Mac**, com as mesmas regras.
+
+### Ordens do Codex
+
+- Chegam em `90 Pedidos e cotas/Pedidos abertos` como `Ordem AAAA-MM-DD — de Codex para Claude — <assunto>`.
+- Execute **nas rodadas** (ou na hora, se o dono pedir). A ordem já traz o acordo com o dono: não repita a
+  entrevista; pergunte só o que faltar, ao **Codex** (um pedido `para Codex`), não ao dono.
+- Ação que muda algo fora do Drive (mandar mensagem, pagar, reservar, apagar, publicar) só se a ordem disser que o
+  dono aprovou aquela ação específica.
+- Ao terminar, crie `Entrega AAAA-MM-DD — de Claude para Codex — <assunto>` em `00 Entrada`
+  (`templates/entrega-do-claude.md`) e mova a ordem para `Pedidos atendidos`.
+
+## Passagem do bastão (decisão 21)
+
+O dono reveza as IAs quando a cota acaba (ChatGPT → Claude → Gemini → Antigravity). Ao começar uma conversa com ele,
+leia `Segundo Cérebro/Passagem do bastão`. No fim de cada rodada, e sempre que ele disser que vai trocar de IA, crie a
+versão nova da passagem (`templates/passagem-do-bastao.md`) e mova a anterior para `99 Arquivo cru`.
 
 ## Pastas (Google Drive → `Meu Drive/Segundo Cérebro`)
 
@@ -35,7 +52,7 @@ Encontre cada pasta pelo nome dentro de `Segundo Cérebro` (busca no Drive por t
 ## Rodada (manhã 07:47 e tarde 17:47, Brasília)
 
 1. Ache o seu último relatório em `90 Pedidos e cotas/Relatórios de rodada`; trabalhe só com o que veio depois dele.
-2. Leia `90 Pedidos e cotas/Pedidos abertos` com `para Claude` e atenda. Ao atender, mova o arquivo para `Pedidos atendidos`.
+2. Leia `90 Pedidos e cotas/Pedidos abertos` com `para Claude` (pedidos e **Ordens do Codex**) e atenda. Ao atender, mova o arquivo para `Pedidos atendidos`; para cada ordem, crie a **Entrega**.
 3. Leia o novo em `05 Pré-processado (Spark)`; para o que o Spark ainda não processou, leia direto em `00 Entrada`.
 4. **Piloto**: processe só **Faculdade** e **Ideias**. Vida pessoal e Finanças/empresa ficam na Entrada, citadas no relatório.
 5. Para cada ideia distinta, crie uma nota com `templates/nota-processada.md` em `10 Refinado (Claude)`, marcando
@@ -85,4 +102,4 @@ Nota que toca várias áreas: uma nota na área principal e links nas outras.
 - **Conexões**: igualdade de palavras não basta; toda conexão forte tem motivo escrito.
 - **Legislação**: ao citar artigo de lei, usar uma fonte confiável; se não der para conferir, marcar "a conferir" e seguir (não trava o fluxo).
 - **Este repositório é público**: nunca grave aqui dados, nomes, conversas ou trechos das notas.
-- Não reorganize o cofre do Obsidian; quem grava nele é o Codex.
+- Não reorganize o cofre do Obsidian sem o dono aprovar; quem grava nele é o Claude Code no Mac (decisão 20).
