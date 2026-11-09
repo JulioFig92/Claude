@@ -32,6 +32,7 @@ Registro das respostas dadas ao Claude. Valem até o dono mudar. Em caso de conf
 | 15 | Coordenação (08/11) | ~~O Claude é o centro~~ — **substituída pela decisão 17** |
 | 17 | Coordenação (09/11) | **Codex maestro, Claude refina.** O dono prefere começar pelo Codex, que distribui as tarefas e grava no cofre; o Claude refina, faz as conexões principais e mantém `Fatos vigentes`. O dono pode começar por qualquer um dos dois |
 | 16 | Dois modos de conversa | **"Parquinho"**: o dono só gera ideias por voz; as IAs capturam e não cobram execução nem aprovação. **"Funcional"**: aprovações, decisões, estudo e tarefas. O dono avisa o modo; sem aviso, perguntar em uma frase. Detalhes só no documento privado de princípios de conversa |
+| 18 | Automações e entrevista (09/11) | **Toda automação nasce de um interesse do dono e tem data de fim**; fica registrada em `Segundo Cérebro/Automações ativas` (Drive). Vencida a data, a IA avisa e propõe encerrar. **Toda tarefa nova começa com entrevista**: a IA pergunta, mostra o problema e o que ele significa, e só executa depois do acordo com o dono. Nada de decidir por ele |
 | 13 | Conexões entre os apps | **Todos os apps precisam conversar**; o Claude também manda pedidos de informação ao Codex, respeitando os créditos dele |
 
 ## Decisões anteriores que continuam valendo
