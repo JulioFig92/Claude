@@ -1,7 +1,7 @@
-# Entrega AAAA-MM-DD — de Claude para Codex — <assunto>
+# Entrega AAAA-MM-DD — de Claude (Mac) para Claude — <assunto>
 
-> Resposta a `Ordem AAAA-MM-DD — de Codex para Claude — <assunto>`. Vai em `00 Entrada`.
-> O Codex conta o resultado ao dono sem refazer o trabalho.
+> Resposta a `Ordem AAAA-MM-DD — de Claude para Claude (Mac) — <assunto>`. Vai em `00 Entrada`.
+> O Claude (maestro) incorpora na rodada e conta ao dono.
 
 ## 1. Feito
 
@@ -11,7 +11,7 @@
 
 - … — bloqueado por: <falta de acesso | decisão do dono | erro>, em uma linha.
 
-## 3. Pergunta para o Codex (se houver)
+## 3. Pergunta para o Claude (se houver)
 
 - …
 

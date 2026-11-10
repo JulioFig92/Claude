@@ -3,16 +3,18 @@
 Este repositório guarda **as regras e o protocolo** de um segundo cérebro processado por várias IAs:
 
 ```
-Voz ──► CODEX (cérebro: entende e planeja) ──Ordem──► CLAUDE (mãos: executa, refina, conecta) ──Entrega──► Codex conta ao dono
+Você ──► CLAUDE (maestro: coordena, executa, refina, conecta) ──ordens──► Claude Code no Mac · Spark · Gemini
+  │
+  └──► Codex (voz e planejamento) ──Pacote──► CLAUDE
                                                           │
              Spark · Gemini Notebook · Antigravity · Hermes · GitHub = força de apoio · Claude Code no Mac grava no Obsidian
 ```
 
 | Quem | Papel |
 |---|---|
-| **ChatGPT / Codex** | **Cérebro**: conversa por voz, entende, planeja e manda **Ordens** ao Claude; lê rascunhos para aprovação |
+| **ChatGPT / Codex** | **Voz e planejamento**: conversa com você; no fim, deixa o **Pacote** da conversa para o Claude. Não executa |
 | **Gemini Spark** | Força bruta antes (pré-processa) e depois (tarefas, agenda, briefing, pesquisa) |
-| **Claude** | **Mãos**: executa as ordens e devolve **Entregas**; refina, faz as conexões principais e mantém os fatos vigentes |
+| **Claude** | **Maestro**: coordena, distribui, executa e cobra; refina, faz as conexões principais e mantém os fatos vigentes |
 | **Claude Code no Mac** | Mesmo motor, no Mac: grava no Obsidian, cuida do Hermes e dos arquivos locais |
 | **Gemini Notebook** | Estudo (Faculdade, OAB) |
 | **Antigravity** | Reserva, leitura gigante, scripts |
