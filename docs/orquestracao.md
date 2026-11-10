@@ -10,16 +10,16 @@ Horários em **Brasília (UTC−3)**.
 
 | Ferramenta | Papel | Onde roda | Cota |
 |---|---|---|---|
-| **ChatGPT / Codex** | **Cérebro**: conversa por voz, entende, planeja e escreve **Ordens** para o Claude (decisão 20) | App no Mac e no celular | Janela de 5 h + teto semanal; créditos extras pagos |
+| **ChatGPT / Codex** | **Voz e planejamento**: conversa com o dono e deixa o **Pacote** da conversa para o Claude; não executa (decisão 22) | App no Mac e no celular | Janela de 5 h + teto semanal; créditos extras pagos |
 | **Gemini Spark** | **Força bruta antes** (pré-processa a Entrada) e **depois** (tarefas, agenda, briefing, pesquisa) | Nuvem do Google, 24 h | Plano Google AI |
-| **Claude** (nuvem, agendado) | **Mãos: executa as ordens**, refina tudo e faz as conexões principais | Nuvem da Anthropic | Janela de 5 h + teto semanal (mesma conta das suas conversas com o Claude) |
+| **Claude** (nuvem, agendado) | **Maestro**: coordena, distribui, executa e cobra; refina e conecta (decisão 22) | Nuvem da Anthropic | Janela de 5 h + teto semanal (mesma conta das suas conversas com o Claude) |
 | **Claude Code** (no Mac / VS Code) | **Executa o que só existe no Mac**: grava no Obsidian, Hermes, arquivos locais | Seu Mac | Mesma cota acima |
 | **Gemini Notebook** | **Estudo**: resumos, áudios e quizzes de Faculdade/OAB a partir de `20 Aprovado` | Nuvem do Google | Plano Google AI |
 | **Antigravity** | **Reserva** (assume refino ou gravação se alguém ficar vermelho) · leitura gigante · scripts | Seu Mac | Janela de 5 h + teto semanal no AI Pro; Ultra sem teto semanal |
 | **VS Code** | Bancada: ver lado a lado o que as IAs mudaram no repositório e no cofre | Seu Mac | — |
 | **GitHub Desktop** | Portão de aprovação das **regras e scripts** (branches `claude/`, `codex/`, `antigravity/`) | Seu Mac | — |
 
-**Princípio (decisão 20):** dois motores — o Codex entende e planeja, o Claude executa; a cota dos dois é a mais preciosa. Tudo o que for volume, leitura longa,
+**Princípio (decisão 22):** o Claude rege e executa; o Codex conversa e entrega o pacote da conversa; nada depende de o Codex obedecer. Tudo o que for volume, leitura longa,
 transcrição ou execução vai para o Google, que tem cota mais folgada e trabalha 24 h. O Claude recebe o material já
 pré-processado e gasta a cota só com o que só ele faz: refinar, separar natureza e autoria, conectar.
 
@@ -34,7 +34,7 @@ pré-processado e gasta a cota só com o que só ele faz: refinar, separar natur
 | **Refinar, marcar natureza e autoria** | **Claude** | Antigravity (tudo sai como `aguarda aprovação`) | Coração do sistema |
 | **Conexões principais** | **Claude** | Esperar a próxima rodada do Claude | Não terceirizar |
 | Ler rascunhos em voz alta e colher aprovação | ChatGPT | Você lê no Drive | — |
-| Gravar no Obsidian | Codex | Antigravity; Claude Code no Mac | Só o que está em `20 Aprovado` |
+| Gravar no Obsidian | Claude Code no Mac | Antigravity | Só o que está em `20 Aprovado` |
 | Tarefas e agenda | Spark | Claude cria lista em `30 Ação` | — |
 | Briefing diário | Spark | Relatório da rodada da manhã do Claude | — |
 | Pesquisa de apoio na web | Spark | Claude | Resultado volta para `00 Entrada` |
@@ -58,12 +58,12 @@ Claude Code (Mac)                   ▲grava no cofre                    ▲grav
 
 | Hora | Quem | O que faz |
 |---|---|---|
-| a qualquer hora | **Você + ChatGPT** | Conversa por voz. No fim, o Codex salva o pacote de voz em `00 Entrada` |
+| a qualquer hora | **Você + ChatGPT** | Conversa por voz. No fim, o Codex grava o `Pacote … de Codex para Claude` em `00 Entrada` |
 | **06:00** | Spark | Pré-processa tudo o que chegou à Entrada desde a tarde → `05 Pré-processado` |
 | **07:47** | **Claude (rodada da manhã, automática)** | Refina, conecta, separa direto × aprovação, escreve relatório |
 | **08:30** | Spark | **Briefing** por e-mail: agenda, tarefas, quantas notas aguardam aprovação |
 | **12:30** | **Você + ChatGPT** (10 min) | O ChatGPT lê `15 Para aprovar` e `Sugestões de conexão`; você aprova ou corrige por voz |
-| **13:00** | Codex → Claude | O Codex manda a ordem de aprovações; o Claude move para `20 Aprovado` e corrige; o Claude Code no Mac grava no Obsidian |
+| **13:00** | Claude | Lê as aprovações (pacote do Codex ou direto com você), move para `20 Aprovado` e corrige; o Claude Code no Mac grava no Obsidian |
 | **13:30** | Spark | Executa: tarefas e agenda a partir de `20 Aprovado`; pesquisas pedidas |
 | **16:00** | Spark | Pré-processa o que chegou desde a manhã |
 | **17:47** | **Claude (rodada da tarde, automática)** | Mesmo trabalho + pedidos de correção + resultados de pesquisa |
@@ -157,7 +157,7 @@ GitHub Desktop abrem, então o que um mexe, os outros veem.
 | Antigravity | Scripts do repositório, leitura gigante do cofre (sábado) e reserva quando alguém fica vermelho |
 | VS Code | Bancada: extensões do Claude Code e do Codex abertas no clone do repositório e na pasta do Codex |
 | GitHub Desktop | Puxa as branches `claude/`, `codex/` e `antigravity/`; você junta só o que aprovar |
-| Codex | Voz, aprovação por voz, gravação no cofre, pedidos `para Codex` |
+| Codex | Voz, planejamento, aprovação por voz; entrega o pacote da conversa ao Claude |
 | Claude | Rodadas 07:47 e 17:47; refino e conexões |
 
 **"Tudo o tempo todo" com cota:** cada ferramenta fica **sempre atribuída** a uma função, mas só **gasta** cota no horário

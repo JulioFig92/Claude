@@ -37,7 +37,7 @@ Decisões que definem este fluxo: [`decisoes.md`](decisoes.md).
 | `05 Pré-processado (Spark)` | Spark | Claude | Volume pesado separado por assunto; transcrições longas quebradas em partes |
 | `10 Refinado (Claude)` | Claude | Codex, você | Notas refinadas, `Índice`, `Sugestões de conexão` |
 | `15 Para aprovar` | Claude | ChatGPT (lê por voz), Codex | Notas de pensamento pessoal aguardando você |
-| `20 Aprovado` | Claude (estudo/tarefas), Codex (após aprovação) | Spark, Gemini Notebook, Codex | Tudo o que está liberado |
+| `20 Aprovado` | Claude (estudo/tarefas e aprovados) | Spark, Gemini Notebook, Codex | Tudo o que está liberado |
 | `30 Ação (Spark)` | Spark | Você, Claude | Briefings, tarefas, resultados de pesquisa |
 | `90 Pedidos e cotas` | Todos | Todos | `Pedidos abertos/`, `Pedidos atendidos/`, `Relatórios de rodada/` |
 | `99 Arquivo cru` | Claude, Spark | — | Originais já processados |
@@ -108,7 +108,7 @@ sem você dizer. Sem indicação clara na fala, o Claude escolhe a mais conserva
 |---|---|
 | Estudo (Faculdade, OAB) e tarefas | **Direto** para `20 Aprovado` |
 | Pensamentos, ideias pessoais, imaginação | `15 Para aprovar` → você aprova por voz → `20 Aprovado` |
-| Sugestões de conexão | Lista à parte → você aprova por voz → o Codex manda a ordem → o Claude Code no Mac aplica no cofre |
+| Sugestões de conexão | Lista à parte → você aprova (com o Claude ou por voz no Codex, que deixa o pacote) → o Claude Code no Mac aplica no cofre |
 | Qualquer coisa com autoria incerta | `15 Para aprovar`, sempre |
 
 ## Escopo do piloto (1 semana)

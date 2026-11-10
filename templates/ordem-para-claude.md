@@ -1,6 +1,6 @@
-# Ordem AAAA-MM-DD — de Codex para Claude — <assunto>
+# Ordem AAAA-MM-DD — de Claude para Claude (Mac) — <assunto>
 
-> Escrita pelo Codex depois de entender e combinar com o dono (decisões 18 e 20). Vai em
+> Escrita pelo Claude (maestro, decisão 22) para o Claude Code no Mac executar o que só existe no Mac. Vai em
 > `90 Pedidos e cotas/Pedidos abertos`. Nada pessoal no repositório: este é só o modelo.
 
 - **Prioridade:** alta · média · baixa — **prazo:** <data/hora ou "próxima rodada">
@@ -29,4 +29,4 @@
 
 ## 7. Se travar
 
-- Pergunte ao Codex (pedido `para Codex`), não ao dono — salvo se for decisão que só ele pode tomar.
+- Responda em `00 Entrada` com o que travou; o Claude decide ou pergunta ao dono.
