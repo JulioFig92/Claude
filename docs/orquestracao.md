@@ -62,6 +62,7 @@ Claude Code (Mac)                   ▲grava no cofre                    ▲grav
 | **06:00** | Spark | Pré-processa tudo o que chegou à Entrada desde a tarde → `05 Pré-processado` |
 | **07:47** | **Claude (rodada da manhã, automática)** | Refina, conecta, separa direto × aprovação, escreve relatório |
 | **08:30** | Spark | **Briefing** por e-mail: agenda, tarefas, quantas notas aguardam aprovação |
+| **12:47** | **Claude (rodada do meio-dia, automática)** | Mesmo trabalho das outras rodadas (decisão do dono, 10/11) |
 | **12:30** | **Você + ChatGPT** (10 min) | O ChatGPT lê `15 Para aprovar` e `Sugestões de conexão`; você aprova ou corrige por voz |
 | **13:00** | Claude | Lê as aprovações (pacote do Codex ou direto com você), move para `20 Aprovado` e corrige; o Claude Code no Mac grava no Obsidian |
 | **13:30** | Spark | Executa: tarefas e agenda a partir de `20 Aprovado`; pesquisas pedidas |

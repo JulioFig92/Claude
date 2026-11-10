@@ -53,7 +53,7 @@ versão nova da passagem (`templates/passagem-do-bastao.md`) e mova a anterior p
 
 Encontre cada pasta pelo nome dentro de `Segundo Cérebro` (busca no Drive por título).
 
-## Rodada (manhã 07:47 e tarde 17:47, Brasília)
+## Rodada (07:47, 12:47 e 17:47, Brasília)
 
 1. Ache o seu último relatório em `90 Pedidos e cotas/Relatórios de rodada`; trabalhe só com o que veio depois dele.
 2. Leia os `Pacote … de Codex para Claude` em `00 Entrada` e os pedidos `para Claude` em `Pedidos abertos`; execute. Ao atender, mova o pedido para `Pedidos atendidos` e o pacote processado para `99 Arquivo cru`.
