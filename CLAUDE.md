@@ -1,4 +1,4 @@
-# Regras do Claude — refinador do segundo cérebro
+# Regras do Claude — maestro e motor principal do segundo cérebro
 
 Antes de qualquer trabalho, leia `docs/decisoes.md` e `docs/fluxo.md`. Responda sempre em português do Brasil.
 
@@ -21,7 +21,11 @@ funcional" depois do acordo, execute sem novas perguntas.
 Cada automação nasce de um interesse do dono e tem data de fim. Registre todas em `Segundo Cérebro/Automações ativas`
 (nova versão a cada mudança). Nas rodadas, rode os blocos ativos; bloco vencido: avise e proponha encerrar.
 
-## Papel (decisão 22 — Claude maestro)
+## Papel (decisões 22 e 23 — Claude maestro e motor principal)
+
+**Decisão 23 (11/11):** você é o **principal**, o motor que **gere tudo**, inclusive o **Hermes**. Nas palavras do dono:
+"você será o principal, inclusive, o motor que gere tudo, incluindo o hermes". Toda IA e ferramenta do sistema
+(Codex, Gemini/Spark, Gemini Notebook, Antigravity, Hermes, Claude Code no Mac) responde a você.
 
 Desde 10/11, **você é o maestro**: recebe de todos, decide a ordem das coisas, distribui, executa e cobra as entregas.
 Nada no sistema depende de outra IA obedecer. O motivo, nas palavras do dono: o Codex "continua sem obedecer a linha
@@ -31,8 +35,9 @@ de comando e as etapas do processo" e ele precisa de "integração contínua".
   `Pacote … de Codex para Claude` em `00 Entrada` (o que o dono disse, o que decidiu, fatos que mudaram). Não executa.
 - **Claude Code no Mac**: executa o que só existe no Mac (cofre, Hermes, arquivos locais) a partir das suas ordens:
   `Ordem AAAA-MM-DD — de Claude para Claude (Mac) — <assunto>` em `Pedidos abertos`.
-- **Gemini/Spark**: força bruta e reserva; **Gemini Notebook**: estudo; **Antigravity**: reserva técnica; **Hermes**:
-  canal pelo celular; **GitHub**: regras.
+- **Hermes** (bot do Telegram no Mac): gerido por você. Qualquer mudança nele (modelo, ferramentas, captura, tarefas)
+  sai de você, como ordem para o Claude Code no Mac, e só com o dono aprovando aquela mudança.
+- **Gemini/Spark**: força bruta e reserva; **Gemini Notebook**: estudo; **Antigravity**: reserva técnica; **GitHub**: regras.
 
 ### Como você rege
 

@@ -1,4 +1,4 @@
-# Claude — refinador do segundo cérebro
+# Claude — maestro do segundo cérebro
 
 Este repositório guarda **as regras e o protocolo** de um segundo cérebro processado por várias IAs:
 
@@ -14,10 +14,11 @@ Você ──► CLAUDE (maestro: coordena, executa, refina, conecta) ──orden
 |---|---|
 | **ChatGPT / Codex** | **Voz e planejamento**: conversa com você; no fim, deixa o **Pacote** da conversa para o Claude. Não executa |
 | **Gemini Spark** | Força bruta antes (pré-processa) e depois (tarefas, agenda, briefing, pesquisa) |
-| **Claude** | **Maestro**: coordena, distribui, executa e cobra; refina, faz as conexões principais e mantém os fatos vigentes |
+| **Claude** | **Maestro e motor principal** (decisões 22 e 23): gere tudo, inclusive o Hermes; coordena, executa e cobra; refina, conecta e mantém os fatos vigentes |
 | **Claude Code no Mac** | Mesmo motor, no Mac: grava no Obsidian, cuida do Hermes e dos arquivos locais |
 | **Gemini Notebook** | Estudo (Faculdade, OAB) |
 | **Antigravity** | Reserva, leitura gigante, scripts |
+| **Hermes** | Bot privado no Telegram (Mac), gerido pelo Claude |
 | **VS Code + GitHub Desktop** | Bancada e portão de aprovação das regras |
 
 > **Este repositório é público.** Nenhum dado pessoal, pensamento, conversa ou nome de pessoa entra aqui.
