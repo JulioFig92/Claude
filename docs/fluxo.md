@@ -19,7 +19,11 @@ Decisões que definem este fluxo: [`decisoes.md`](decisoes.md).
    └──► 15 Para aprovar ....... pensamentos pessoais esperam você
            │
            ▼  APROVAÇÃO — você, por voz no ChatGPT
-         20 Aprovado .......... Claude move o que você aprovou; o Claude Code no Mac grava no Obsidian
+         20 Aprovado .......... Claude move o que você aprovou
+   │
+   ▼  SYNC SEM IA — programa agendado no Mac (decisão 24)
+ Obsidian ................... pasta "Segundo Cérebro" do cofre, por área + Índice; recibo com sha256 no Drive
+   └─► pasta "Notas soltas" do cofre volta para 00 Entrada (mesmo programa)
    │
    ▼  FORÇA BRUTA (depois) — Gemini Spark + Gemini Notebook
  30 Ação (Spark) ............ tarefas, agenda, briefing diário, pesquisas de apoio
@@ -75,11 +79,13 @@ Quem atende move o pedido para `Pedidos atendidos` e cita o resultado no relató
 | De → Para | Como | Quando o destino lê | Gasta crédito de |
 |---|---|---|---|
 | Você → ChatGPT/Codex | Voz | Na hora | ChatGPT |
-| Você → Claude | Esta conversa, ou um pedido no Drive | Na hora / 07:47 e 17:47 | Claude |
-| ChatGPT/Codex → Claude | Pacote de voz em `00 Entrada`; pedidos; respostas | 07:47 e 17:47 | Claude (leitura) |
+| Você → Claude | Esta conversa, ou um pedido no Drive | Na hora / 07:47 | Claude |
+| ChatGPT/Codex → Claude | Pacote de voz, Fato atualizado ou Entrega em `00 Entrada`; respostas | 07:47 | Claude (leitura) |
+| Drive → Obsidian | Programa sem IA no Mac (`20 Aprovado` + diário → cofre) | ~08h20, 13h20, 18h20 | Nenhum |
+| Obsidian → Claude | Pasta `Notas soltas` → `00 Entrada` (mesmo programa) | ~08h20, 13h20, 18h20; Claude lê às 07:47 | Claude (leitura) |
 | Claude → Codex | Pedido "para Codex" | **Quando você abre o Codex** (ele confere ao começar) e ele tem créditos | Codex |
-| Claude → Spark | Pedido "para Spark" | 06:00 e 16:00 | Google |
-| Spark → Claude | `05 Pré-processado`; pesquisas e respostas em `00 Entrada` | 07:47 e 17:47 | Claude (leitura) |
+| Claude → Spark | Pedido "para Spark" | 06:00 | Google |
+| Spark → Claude | `05 Pré-processado`; respostas em `00 Entrada` | 07:47 | Claude (leitura) |
 | Codex ↔ Spark | Pedidos | Conforme cada um | Do destino |
 | Claude → Antigravity | Pedido "para Antigravity" | Quando você abre o Antigravity | Google |
 | Gemini Notebook | Lê `20 Aprovado`; o que gerar de útil você ou o Spark salvam na Entrada | Ao abrir | Google |
