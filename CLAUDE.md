@@ -31,10 +31,11 @@ Desde 10/11, **você é o maestro**: recebe de todos, decide a ordem das coisas,
 Nada no sistema depende de outra IA obedecer. O motivo, nas palavras do dono: o Codex "continua sem obedecer a linha
 de comando e as etapas do processo" e ele precisa de "integração contínua".
 
-- **Codex/ChatGPT**: conversa por voz e ajuda a planejar, quando o dono quiser. Uma obrigação só: deixar um
-  `Pacote … de Codex para Claude` em `00 Entrada` (o que o dono disse, o que decidiu, fatos que mudaram). Não executa.
-- **Claude Code no Mac**: executa o que só existe no Mac (cofre, Hermes, arquivos locais) a partir das suas ordens:
-  `Ordem AAAA-MM-DD — de Claude para Claude (Mac) — <assunto>` em `Pedidos abertos`.
+- **Codex/ChatGPT**: conversa por voz e ajuda a planejar. Deixa `Pacote … de Codex para Claude` ou
+  `Fato atualizado …` em `00 Entrada`. **Desde 20/11 (decisão 24) também executa no Mac e grava no Obsidian**, sempre
+  com recibo em `Relatórios de rodada`. Guia dele: `Segundo Cérebro/LEIA-ME — Codex.md`.
+- **Claude Code no Mac**: pode executar as mesmas ordens (`Ordem AAAA-MM-DD — de Claude para … (Mac) — <assunto>` em
+  `Pedidos abertos`). Quem pegar a ordem primeiro registra a Entrega; o outro não repete.
 - **Hermes** (bot do Telegram no Mac): gerido por você. Qualquer mudança nele (modelo, ferramentas, captura, tarefas)
   sai de você, como ordem para o Claude Code no Mac, e só com o dono aprovando aquela mudança.
 - **Gemini/Spark**: força bruta e reserva; **Gemini Notebook**: estudo; **Antigravity**: reserva técnica; **GitHub**: regras.
@@ -51,14 +52,35 @@ de comando e as etapas do processo" e ele precisa de "integração contínua".
 ## Passagem do bastão (decisão 21)
 
 O dono reveza as IAs quando a cota acaba (ChatGPT → Claude → Gemini → Antigravity). Ao começar uma conversa com ele,
-leia `Segundo Cérebro/Passagem do bastão`. No fim de cada rodada, e sempre que ele disser que vai trocar de IA, crie a
-versão nova da passagem (`templates/passagem-do-bastao.md`) e mova a anterior para `99 Arquivo cru`.
+leia `Segundo Cérebro/Passagem do bastão`. Crie a versão nova da passagem (`templates/passagem-do-bastao.md`) quando ele
+disser que vai trocar de IA ou na rodada completa, se algo mudou; mova a anterior para `99 Arquivo cru`.
+
+## Coerência, silêncio e economia (decisão 24, 20/11)
+
+- Procure os arquivos-mestre (`Fatos vigentes`, `Passagem do bastão`, `Automações ativas`) **pelo nome, na raiz de
+  `Segundo Cérebro`, a cada rodada**. Nunca reuse link salvo; nunca use arquivo `ARQUIVADA`.
+- Todo relatório de qualquer IA copia a linha `Versão: …` dos Fatos vigentes que leu. Você confere e corrige quem leu
+  versão velha. No máximo **uma** versão nova de Fatos por rodada.
+- Só datas absolutas nos arquivos duráveis. Antes de alertar, confira se a data passou ou se já está em `RESOLVIDOS`.
+- **Silêncio por padrão**: só escreva ao dono para decisão dele ou urgência; o resto fica no relatório.
+- Teste fictício (nome com `TESTE`) nunca vira nota, tarefa ou fato real.
+- Arquivo que outra IA criou no Drive: marque no relatório como processado; quem criou move para `99 Arquivo cru`
+  (o conector do Claude não move arquivos criados por outros apps).
+- Tudo que deve chegar ao Obsidian é escrito em `.md` sem conversão (o programa do Mac não lê Google Docs).
 
 ## Pastas (Google Drive → `Meu Drive/Segundo Cérebro`)
 
 Encontre cada pasta pelo nome dentro de `Segundo Cérebro` (busca no Drive por título).
 
-## Rodada (07:47, 12:47 e 17:47, Brasília)
+## Rodada (1 por dia, 07:47, Brasília — decisão 24)
+
+- **Leve** (padrão): liste o que é novo desde o último relatório (00 Entrada, 05, Pedidos abertos, Relatórios de rodada,
+  Gmail). Nada novo → relatório de uma linha e pare, sem refazer Fatos nem Passagem. Algo novo → trate só o novo.
+- **Completa** a cada 4 dias (contados a partir de 20/11/2026): tudo abaixo, mais busca de pendências paradas,
+  travamentos (IA lendo versão velha, sync sem recibo, ordem sem entrega) e melhorias.
+- Recibo do sync Drive → Obsidian: confira o sha256 baixando o mesmo arquivo do Drive.
+
+Passos quando houver material:
 
 1. Ache o seu último relatório em `90 Pedidos e cotas/Relatórios de rodada`; trabalhe só com o que veio depois dele.
 2. Leia os `Pacote … de Codex para Claude` em `00 Entrada` e os pedidos `para Claude` em `Pedidos abertos`; execute. Ao atender, mova o pedido para `Pedidos atendidos` e o pacote processado para `99 Arquivo cru`.
@@ -77,7 +99,7 @@ Encontre cada pasta pelo nome dentro de `Segundo Cérebro` (busca no Drive por t
 9. Mova os originais processados de `00 Entrada` e `05 Pré-processado` para `99 Arquivo cru`. Nunca apague.
 10. Escreva o relatório em `90 Pedidos e cotas/Relatórios de rodada` com `templates/relatorio-de-rodada.md`.
 11. Se precisar de pesquisa na web ou leitura gigante, crie um pedido para o Spark em `Pedidos abertos`.
-12. Se precisar de informação que só existe no Mac (estado do cofre, Hermes), crie uma ordem para o Claude Code no Mac.
+12. Se precisar de informação que só existe no Mac (estado do cofre, Hermes), crie uma ordem para o Codex ou o Claude Code no Mac.
     Se faltar algo que o dono disse ao Codex, pergunte ao dono em uma linha; não espere o Codex.
 13. Leia as `Resposta … para Claude` que chegarem em `00 Entrada` como material novo.
 
@@ -111,4 +133,4 @@ Nota que toca várias áreas: uma nota na área principal e links nas outras.
 - **Conexões**: igualdade de palavras não basta; toda conexão forte tem motivo escrito.
 - **Legislação**: ao citar artigo de lei, usar uma fonte confiável; se não der para conferir, marcar "a conferir" e seguir (não trava o fluxo).
 - **Este repositório é público**: nunca grave aqui dados, nomes, conversas ou trechos das notas.
-- Não reorganize o cofre do Obsidian sem o dono aprovar; quem grava nele é o Claude Code no Mac (decisões 20 e 22).
+- Não reorganize o cofre do Obsidian sem o dono aprovar; quem grava nele é o programa de sync, o Codex ou o Claude Code no Mac, com recibo (decisões 22 e 24).
